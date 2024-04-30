@@ -187,6 +187,55 @@
                                             </thead>
         
                                             <tbody>
+
+                                                @foreach ($ultimosCobros as $ultimoCobro)
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="check1" value="option">
+                                                        </div>
+                                                    </td>
+                                                    <td><p class="fw-medium mb-0">{{ $ultimoCobro->numero_rc }}</p></td>
+                                                    <td><img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle me-2">
+                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">Donald Risher</a>
+                                                    </td>
+                                                    <td>morbi.quis@protonmail.org</td>
+                                                    <td>20 Sep, 2022</td>
+                                                    <td>$240.00</td>
+                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
+                                                            </button>
+                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                <li>
+                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
+                                                                        View</button>
+                                                                </li>
+                                                                <li>
+                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
+                                                                        Edit</button>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
+                                                                        Download</a>
+                                                                </li>
+                                                                <li class="dropdown-divider"></li>
+                                                                <li>
+                                                                    <a class="dropdown-item remove-item-btn" href="#">
+                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
+                                                                        Delete
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+
+
+
                                                 <tr>
                                                     <td>
                                                         <div class="form-check">
