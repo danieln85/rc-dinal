@@ -15,7 +15,7 @@ return new class extends Migration
             // $table->string('nombre_cliente')->nullable();
             // $table->string('recibido_admin')->nullable();
             // $table->string('recibido_supervisor')->nullable();
-            $table->string('status')->nullable();
+            $table->string('estado')->nullable();
             // $table->timestamps();
 
             // $table->date('date_cobro')->nullable();
@@ -39,7 +39,7 @@ return new class extends Migration
             // $table->string('nombre_cliente')->nullable();
             // $table->string('recibido_admin')->nullable();
             // $table->string('recibido_supervisor')->nullable();
-            $table->string('status')->nullable();
+            $table->string('estado')->nullable();
             // $table->dropColumn('date_cobro');
             // $table->dropColumn('num_factura');
             // $table->dropColumn('cobro_abono');
