@@ -35,6 +35,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('cobros_fac', function (Blueprint $table) {
+            
             // $table->string('nombre_cliente')->nullable();
             // $table->string('recibido_admin')->nullable();
             // $table->string('recibido_supervisor')->nullable();
