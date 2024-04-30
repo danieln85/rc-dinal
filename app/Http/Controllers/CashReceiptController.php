@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CobroFac;
 
 class CashReceiptController extends Controller
 {
@@ -11,7 +12,10 @@ class CashReceiptController extends Controller
      */
     public function index()
     {
-        return view('cash-receipt');
+        $ultimosCobros = CobroFac::orderBy('numero_rc', 'desc')
+                          ->limit(10)
+                          ->get();
+        return view('cash-receipt', compact('ultimosCobros'));
     }
 
     /**
