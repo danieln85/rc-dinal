@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('cobros_fac', function (Blueprint $table) {
-            // $table->string('nombre_cliente')->nullable();
-            // $table->string('recibido_admin')->nullable();
-            // $table->string('recibido_supervisor')->nullable();
+            $table->string('nombre_cliente')->nullable();
+            $table->string('recibido_admin')->nullable();
+            $table->string('recibido_supervisor')->nullable();
             $table->string('estado')->nullable();
-            // $table->timestamps();
+            $table->timestamps();
 
             // $table->date('date_cobro')->nullable();
             // $table->string('num_factura')->nullable();
@@ -36,10 +36,11 @@ return new class extends Migration
     {
         Schema::table('cobros_fac', function (Blueprint $table) {
             
-            // $table->string('nombre_cliente')->nullable();
-            // $table->string('recibido_admin')->nullable();
-            // $table->string('recibido_supervisor')->nullable();
+            $table->string('nombre_cliente')->nullable();
+            $table->string('recibido_admin')->nullable();
+            $table->string('recibido_supervisor')->nullable();
             $table->string('estado')->nullable();
+
             // $table->dropColumn('date_cobro');
             // $table->dropColumn('num_factura');
             // $table->dropColumn('cobro_abono');
