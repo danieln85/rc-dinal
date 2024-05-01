@@ -176,12 +176,16 @@
                                                             <input class="form-check-input" type="checkbox" id="checkAll" value="option">
                                                         </div>
                                                     </th>
-                                                    <th scope="col">Invoice ID</th>
-                                                    <th scope="col">Client</th>
-                                                    <th scope="col" style="width: 20%;">Email</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Billed</th>
-                                                    <th scope="col" style="width: 16%;">Status</th>
+                                                    <th scope="col">FECHA</th>
+                                                    <th scope="col"># RC</th>
+                                                    <th scope="col" style="width: 20%;">CLIENTE</th>
+                                                    <th scope="col" style="width: 20%;">CORREO</th>
+                                                    <th scope="col">FACTURA</th>
+                                                    <th scope="col">COBRO</th>
+                                                    <th scope="col">ABONO</th>
+                                                    <th scope="col">COBRÓ</th>
+                                                    <th scope="col">$$$</th>
+                                                    <th scope="col">ESTADO</th>
                                                     <th scope="col" style="width: 12%;">Action</th>
                                                 </tr>
                                             </thead>
@@ -195,14 +199,23 @@
                                                             <input class="form-check-input" type="checkbox" id="check1" value="option">
                                                         </div>
                                                     </td>
+                                                    <td>{{ $ultimoCobro->date_cobro }}</td>
                                                     <td><p class="fw-medium mb-0">{{ $ultimoCobro->numero_rc }}</p></td>
                                                     <td><img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">Donald Risher</a>
+                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">{{ $ultimoCobro->nombre_cliente }}</a>
                                                     </td>
                                                     <td>morbi.quis@protonmail.org</td>
-                                                    <td>20 Sep, 2022</td>
-                                                    <td>$240.00</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
+
+                                                    <td>{{ $ultimoCobro->num_factura }}</td>
+                                                    
+                                                    <td>{{ $ultimoCobro->cobro_abono }}</td>
+                                                    <td class="text-center">{{ $ultimoCobro->abono }}</td>
+                                                    <td>David Ojeda</td>
+                                                    <td>
+                                                        <span class="badge bg-success-subtle text-{{ $ultimoCobro->estado == 'recibido' ? 'success' : ($ultimoCobro->estado == 'pendiente' ? 'warning' : 'danger') }} p-2">{{ strtoupper($ultimoCobro->estado) }}</span>
+                                                    </td>
+                                                    
+                                                    <td>Vigente</td>
                                                     <td>
                                                         <div class="dropdown">
                                                             <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -233,403 +246,6 @@
                                                     </td>
                                                 </tr>
                                                 @endforeach
-
-
-
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check1" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="fw-medium mb-0">Lec-2152</p></td>
-                                                    <td><img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">Donald Risher</a>
-                                                    </td>
-                                                    <td>morbi.quis@protonmail.org</td>
-                                                    <td>20 Sep, 2022</td>
-                                                    <td>$240.00</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check2" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="fw-medium mb-0">Lec-2153</p></td>
-                                                    <td><img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">Brody Holman</a>
-                                                    </td>
-                                                    <td>metus@protonmail.org</td>
-                                                    <td>12 Arl, 2022</td>
-                                                    <td>$390.00</td>
-                                                    <td><span class="badge bg-warning-subtle text-warning p-2">Unpaid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check3" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="fw-medium mb-0">Lec-2154</p></td>
-                                                    <td><img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">Jolie Hood</a>
-                                                    </td>
-                                                    <td>morbi.quis@protonmail.org</td>
-                                                    <td>28 Mar, 2022</td>
-                                                    <td>$440.00</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check4" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="fw-medium mb-0">Lec-2155</p></td>
-                                                    <td><img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">Buckminster Wong</a>
-                                                    </td>
-                                                    <td>morbi.quis@protonmail.org</td>
-                                                    <td>23 Aug, 2022</td>
-                                                    <td>$520.00</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check5" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="fw-medium mb-0">Lec-2156</p></td>
-                                                    <td><img src="assets/images/users/avatar-5.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">Howard Lyons</a>
-                                                    </td>
-                                                    <td>neque.sed.dictum@icloud.org</td>
-                                                    <td>18 Sep, 2022</td>
-                                                    <td>$480.00</td>
-                                                    <td><span class="badge bg-info-subtle text-info  p-2">Refund</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check6" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="fw-medium mb-0">Lec-2157</p></td>
-                                                    <td><img src="assets/images/users/avatar-6.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">Howard Oneal</a>
-                                                    </td>
-                                                    <td>metus@protonmail.org</td>
-                                                    <td>12 Feb, 2022</td>
-                                                    <td>$550.00</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check7" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="fw-medium mb-0">Lec-2158</p></td>
-                                                    <td><img src="assets/images/users/avatar-7.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">Jena Hall</a>
-                                                    </td>
-                                                    <td>morbi.quis@protonmail.org</td>
-                                                    <td>30 Nov, 2022</td>
-                                                    <td>$170.00</td>
-                                                    <td><span class="badge bg-danger-subtle text-danger p-2">Cancel</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check8" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="fw-medium mb-0">Lec-2159</p></td>
-                                                    <td><img src="assets/images/users/avatar-8.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">Paki Edwards</a>
-                                                    </td>
-                                                    <td>dictum.phasellus.in@hotmail.org</td>
-                                                    <td>23 Sep, 2022</td>
-                                                    <td>$720.00</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check9" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="fw-medium mb-0">Lec-2160</p></td>
-                                                    <td><img src="assets/images/users/avatar-9.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">James Diaz</a>
-                                                    </td>
-                                                    <td>nascetur@yahoo.com</td>
-                                                    <td>16 Aug, 2022</td>
-                                                    <td>$820.00</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
 
                                                 
                                             </tbody><!-- end tbody -->
