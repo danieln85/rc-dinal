@@ -212,10 +212,10 @@
                                                     <td class="text-center">{{ $ultimoCobro->abono }}</td>
                                                     <td>David Ojeda</td>
                                                     <td>
-                                                        <span class="badge bg-success-subtle text-{{ $ultimoCobro->estado == 'recibido' ? 'success' : ($ultimoCobro->estado == 'pendiente' ? 'warning' : 'danger') }} p-2">{{ strtoupper($ultimoCobro->estado) }}</span>
+                                                        <span class="badge bg-success-subtle text-{{ $ultimoCobro->estado == 'recibido' ? 'success' : ($ultimoCobro->estado == 'pendiente' ? 'warning' : 'danger') }} p-2">{{ strtoupper($ultimoCobro->estado_cobro) }}</span>
                                                     </td>
                                                     
-                                                    <td>Vigente</td>
+                                                    <td>{{ $ultimoCobro->estado_rc }}</td>
                                                     <td>
                                                         <div class="dropdown">
                                                             <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
