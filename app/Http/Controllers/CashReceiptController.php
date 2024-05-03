@@ -15,7 +15,7 @@ class CashReceiptController extends Controller
         $ultimosCobros = CobroFac::orderBy('numero_rc', 'desc')
                           ->limit(10)
                           ->get();
-        return view('cash-receipt', compact('ultimosCobros'));
+        return view('cash-receipts', compact('ultimosCobros'));
     }
 
     /**
@@ -23,7 +23,9 @@ class CashReceiptController extends Controller
      */
     public function create()
     {
-        return view('create-cash-receipts');
+        $ultimoRc = CobroFac::max('numero_rc');
+
+        return view('create-cash-receipt', compact('ultimoRc'));
     }
 
     /**
@@ -31,7 +33,30 @@ class CashReceiptController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cobroFac = new CobroFac();
+
+    // Asignar los valores de los campos a la instancia del modelo
+    $cobroFac->date_cobro = $request->input('date_cobro');
+    $cobroFac->numero_rc = $request->input('numero_rc');
+    $cobroFac->num_factura = $request->input('num_factura');
+    $cobroFac->nombre_cliente = $request->input('nombre_cliente');
+    $cobroFac->email_cliente = $request->input('email_cliente');
+    $cobroFac->cobro_abono = $request->input('cobro_abono');
+    $cobroFac->abono = $request->input('abono');
+    $cobroFac->descuento = $request->input('descuento');
+    $cobroFac->retencion = $request->input('retencion');
+    $cobroFac->devolucion = $request->input('devolucion');
+    $cobroFac->metodo_pago = $request->input('metodo_pago');
+    $cobroFac->informacion = $request->input('informacion');
+    $cobroFac->estado_rc = 'activo';
+    $cobroFac->estado_dinero = 'pendiente';
+    $cobroFac->cobrado_por = 'David Ojeda';
+
+    // Guardar el modelo en la base de datos
+    $cobroFac->save();
+
+    // Redireccionar a una ruta después de guardar los datos
+    return redirect()->route('cash-receipts');
     }
 
     /**
@@ -39,7 +64,8 @@ class CashReceiptController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
+        return view('show-cash-receipt');
     }
 
     /**

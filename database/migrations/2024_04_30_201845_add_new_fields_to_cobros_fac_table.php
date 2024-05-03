@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('cobros_fac', function (Blueprint $table) {
-            
+
+            $table->string('nombre_cliente')->nullable();
+            $table->string('email_cliente')->nullable();
             $table->string('recibido_admin')->nullable();
             $table->string('recibido_supervisor')->nullable();
             $table->string('estado_rc')->nullable();
@@ -38,7 +40,8 @@ return new class extends Migration
     {
         Schema::table('cobros_fac', function (Blueprint $table) {
             
-            
+            $table->string('nombre_cliente');
+            $table->string('email_cliente');
             $table->dropColumn('recibido_admin');
             $table->dropColumn('recibido_supervisor');
             $table->string('estado_rc');

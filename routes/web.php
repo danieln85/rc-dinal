@@ -6,7 +6,10 @@ use App\Http\Controllers\CashReceiptController;
 
 Route::resource('cash-receipt', CashReceiptController::class);
 Route::get('recibos-de-caja', [CashReceiptController::class, 'index'])->name('cash-receipts');
-Route::get('crear-recibos-de-caja', [CashReceiptController::class, 'create'])->name('create-cash-receipts');
+Route::get('crear-recibo-de-caja', [CashReceiptController::class, 'create'])->name('create-cash-receipt');
+// Ruta para almacenar un nuevo registro (método store)
+Route::post('/guardar-recibo', [CashReceiptController::class, 'store'])->name('cash-receipts.store');
+
 
 Route::get('/', function () {
     return view('welcome');
