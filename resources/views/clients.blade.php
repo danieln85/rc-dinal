@@ -15,12 +15,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">RECIBOS DE CAJA</h4>
+                                <h4 class="mb-sm-0">CLIENTES</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Inicio</a></li>
-                                        <li class="breadcrumb-item active">Recibos de caja</li>
+                                        <li class="breadcrumb-item active">Clientes</li>
                                     </ol>
                                 </div>
 
@@ -31,7 +31,7 @@
 
                     <div class="row pb-4 gy-3">
                         <div class="col-sm-4">
-                            <a href="{{route('create-cash-receipt')}}" class="btn btn-primary addMembers-modal"><i class="las la-plus me-1"></i> Crear Recibo</a>
+                            <a href="{{route('create-cash-receipt')}}" class="btn btn-primary addMembers-modal"><i class="las la-plus me-1"></i> Crear Cliente</a>
                         </div>
 
                         <div class="col-sm-auto ms-auto">
@@ -182,46 +182,31 @@
                                                             <input class="form-check-input" type="checkbox" id="checkAll" value="option">
                                                         </div>
                                                     </th> --}}
-                                                    <th scope="col">FECHA</th>
-                                                    <th scope="col"># RC</th>
+                                                                                                
                                                     <th scope="col" style="width: 20%;">CLIENTE</th>
                                                     <th scope="col" style="width: 20%;">CORREO</th>
-                                                    <th scope="col">FACTURA</th>
-                                                    <th scope="col">COBRO</th>
-                                                    <th scope="col">ABONO</th>
-                                                    <th scope="col">COBRÓ</th>
-                                                    <th scope="col">$$$</th>
-                                                    <th scope="col">ESTADO</th>
+                                                    <th scope="col">NIT</th>
                                                     <th scope="col" style="width: 12%;">Action</th>
                                                 </tr>
                                             </thead>
         
                                             <tbody>
 
-                                                @foreach ($ultimosCobros as $ultimoCobro)
+                                                @forelse ($clientes as $cliente)
                                                 <tr>
                                                     {{-- <td>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" id="check1" value="option">
                                                         </div>
                                                     </td> --}}
-                                                    <td>{{ $ultimoCobro->date_cobro }}</td>
-                                                    <td><p class="fw-medium mb-0">{{ $ultimoCobro->numero_rc }}</p></td>
+                                                    
                                                     <td>
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">{{ Illuminate\Support\Str::limit($ultimoCobro->nombre_cliente, 15) }}</a>
+                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">{{ Illuminate\Support\Str::limit($cliente->nombre_cliente, 30) }}</a>
                                                     </td>
-                                                    <td>{{ Illuminate\Support\Str::limit($ultimoCobro->email_cliente, 15) }}</td>
+                                                    <td>{{ Illuminate\Support\Str::limit($cliente->email_cliente, 30) }}</td>
 
-                                                    <td>{{ $ultimoCobro->num_factura }}</td>
-                                                    
-                                                    <td>{{ $ultimoCobro->cobro_abono }}</td>
-                                                    <td class="text-center">{{ $ultimoCobro->abono }}</td>
-                                                    <td>David Ojeda</td>
-                                                    <td>
-                                                        <span class="badge bg-success-subtle text-{{ $ultimoCobro->estado == 'recibido' ? 'success' : ($ultimoCobro->estado == 'pendiente' ? 'warning' : 'danger') }} p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
-                                                    </td>
-                                                    
-                                                    <td>{{ $ultimoCobro->estado_rc }}</td>
+                                                    <td>{{ $cliente->nit_cliente }}</td>
+
                                                     <td>
                                                         <div class="dropdown">
                                                             <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -251,7 +236,9 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                @endforeach
+                                                @empty
+                                                <h3 class="mb-4 mt-2">Aún no hay clientes creados.</h3>
+                                                @endforelse
 
                                                 
                                             </tbody><!-- end tbody -->
@@ -262,28 +249,7 @@
                         </div>
                     </div>
 
-                    <div class="row align-items-center mb-4 gy-3">
-                        <div class="col-md-5">
-                            <p class="mb-0 text-muted">Showing <b>1</b> to <b>5</b> of <b>10</b> results</p>
-                        </div>
-                        <div class="col-sm-auto ms-auto">
-                            <nav aria-label="...">
-                                <ul class="pagination mb-0">
-                                  <li class="page-item disabled">
-                                    <span class="page-link">Previous</span>
-                                  </li>
-                                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                  <li class="page-item" aria-current="page">
-                                    <span class="page-link">2</span>
-                                  </li>
-                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                  <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                  </li>
-                                </ul>
-                              </nav>
-                        </div>
-                    </div>
+                    
                 </div>
                 <!-- container-fluid -->
             </div>

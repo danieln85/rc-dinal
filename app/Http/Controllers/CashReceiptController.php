@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CashReceiptRequest;
 use App\Models\CobroFac;
 
 class CashReceiptController extends Controller
@@ -31,7 +32,7 @@ class CashReceiptController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CashReceiptRequest $request)
     {
         $cobroFac = new CobroFac();
 
@@ -54,6 +55,9 @@ class CashReceiptController extends Controller
 
     // Guardar el modelo en la base de datos
     $cobroFac->save();
+
+    session()->flash('success', '¡El Recibo de caja se creó exitosamente!');
+
 
     // Redireccionar a una ruta después de guardar los datos
     return redirect()->route('cash-receipts');

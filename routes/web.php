@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CashReceiptController;
+use App\Http\Controllers\ClientController;
 
 
 Route::resource('cash-receipt', CashReceiptController::class);
@@ -9,6 +10,11 @@ Route::get('recibos-de-caja', [CashReceiptController::class, 'index'])->name('ca
 Route::get('crear-recibo-de-caja', [CashReceiptController::class, 'create'])->name('create-cash-receipt');
 // Ruta para almacenar un nuevo registro (método store)
 Route::post('/guardar-recibo', [CashReceiptController::class, 'store'])->name('cash-receipts.store');
+
+
+Route::resource('client', ClientController::class);
+Route::get('clientes', [ClientController::class, 'index'])->name('clients');
+Route::get('crear-clientes', [ClientController::class, 'create'])->name('create-client');
 
 
 Route::get('/', function () {
