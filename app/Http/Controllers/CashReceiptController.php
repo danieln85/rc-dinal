@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CashReceiptRequest;
 use App\Models\CobroFac;
+use Illuminate\Support\Facades\Session;
 
 class CashReceiptController extends Controller
 {
@@ -27,6 +28,21 @@ class CashReceiptController extends Controller
         $ultimoRc = CobroFac::max('numero_rc');
 
         return view('create-cash-receipt', compact('ultimoRc'));
+    }
+
+
+    public function storeSelectedClient(Request $request)
+    {
+        // Asegúrate de validar el ID del cliente para evitar problemas.
+        $validated = $request->validate([
+            'cliente_id' => 'required|exists:clientes,id' // Asegúrate de que el ID exista en la base de datos
+        ]);
+    
+        // Almacena el ID del cliente en la sesión
+        Session::put('cliente_id', $validated['cliente_id']);
+    
+        // Redirecciona a la vista donde se crea el recibo
+        return redirect()->route('create-cash-receipt');
     }
 
     /**

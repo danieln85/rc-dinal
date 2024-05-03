@@ -14,14 +14,16 @@ return new class extends Migration
         Schema::table('cobros_fac', function (Blueprint $table) {
 
             // $table->id();
-            $table->date('date_cobro')->nullable();
-            $table->string('num_factura')->nullable();
-            $table->string('cobro_abono')->nullable();
-            $table->string('abono')->nullable();
-            $table->string('descuento')->nullable();
-            $table->string('retencion')->nullable();
-            $table->string('devolucion')->nullable();
-            $table->string('metodo_pago')->nullable();
+            // $table->date('numero_rc')->nullable();
+            // $table->date('date_cobro')->nullable();
+            // $table->string('num_factura')->nullable();
+            // $table->string('cobro_abono')->nullable();
+            // $table->string('abono')->nullable();
+            // $table->string('descuento')->nullable();
+            // $table->string('retencion')->nullable();
+            // $table->string('devolucion')->nullable();
+            // $table->string('metodo_pago')->nullable();
+            // $table->string('informacion')->nullable();
 
 
 
@@ -46,23 +48,25 @@ return new class extends Migration
         Schema::table('cobros_fac', function (Blueprint $table) {
 
              
-            $table->string('nombre_cliente');
-            $table->string('email_cliente');
+            $table->dropColumn('nombre_cliente');
+            $table->dropColumn('email_cliente');
             $table->dropColumn('recibido_admin');
             $table->dropColumn('recibido_supervisor');
-            $table->string('estado_rc');
-            $table->string('cobrado_por');
-            $table->string('estado_dinero');
+            $table->dropColumn('estado_rc');
+            $table->dropColumn('cobrado_por');
+            $table->dropColumn('estado_dinero');
 
             // $table->id();
-            $table->dropColumn('date_cobro');
-            $table->dropColumn('num_factura');
-            $table->dropColumn('cobro_abono');
-            $table->dropColumn('abono');
-            $table->dropColumn('descuento');
-            $table->dropColumn('retencion');
-            $table->dropColumn('devolucion');
-            $table->dropColumn('metodo_pago');
+            // $table->dropColumn('numero_rc');
+            // $table->dropColumn('date_cobro');
+            // $table->dropColumn('num_factura');
+            // $table->dropColumn('cobro_abono');
+            // $table->dropColumn('abono');
+            // $table->dropColumn('descuento');
+            // $table->dropColumn('retencion');
+            // $table->dropColumn('devolucion');
+            // $table->dropColumn('metodo_pago');
+            // $table->dropColumn('informacion');
             $table->dropTimestamps();
         });
     }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CashReceiptRequest extends FormRequest
+class ClientRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,18 +22,11 @@ class CashReceiptRequest extends FormRequest
     public function rules(): array
     {
         return [
-        'date_cobro' => 'required|date',
-        'numero_rc' => 'required|string',
-        'num_factura' => 'required|string',
+        'id' => 'required',
         'nombre_cliente' => 'required|string',
         'email_cliente' => 'required|email',
-        'cobro_abono' => 'required|string',
-        'abono' => 'nullable|string',
-        'descuento' => 'nullable|string',
-        'retencion' => 'nullable|string',
-        'devolucion' => 'nullable|string',
-        'metodo_pago' => 'required|string',
-        'informacion' => 'nullable|string',
+        'nit' => 'required|string',
+        'creado_por' => 'required|string',
         ];
     }
 }

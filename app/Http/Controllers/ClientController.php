@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use App\Http\Requests\ClientRequest;
 
 class ClientController extends Controller
 {
@@ -16,36 +17,42 @@ class ClientController extends Controller
         return view('clients', compact('clientes'));
     }
 
+    public function selectClient()
+    {
+        $clientes = Client::all();
+        return view('clients', compact('clientes'));
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('create-client');
+        $ultimoId = Client::max('id');
+        return view('create-client', compact('ultimoId'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ClientRequest $request)
     {
-        $cliente = new Cliente();
+        $cliente = new Client();
 
     // Asignar los valores de los campos a la instancia del modelo
 
     $cliente->nombre_cliente = $request->input('nombre_cliente');
     $cliente->email_cliente = $request->input('email_cliente');
     $cliente->nit = $request->input('nit');
-    $cliente->creado_por = 'David Ojeda';
+    $cliente->creado_por = $request->input('creado_por');
 
     // Guardar el modelo en la base de datos
-    $cobroFac->save();
+    $cliente->save();
 
     session()->flash('success', '¡El Cliente se creó exitosamente!');
 
 
     // Redireccionar a una ruta después de guardar los datos
-    return redirect()->route('cash-receipts');
+    return redirect()->route('clients');
     }
 
     /**

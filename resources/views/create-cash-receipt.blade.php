@@ -42,7 +42,7 @@
                         </div>
                     @endif
 
-                                <form method="POST" action="{{ route('cash-receipts.store')}}" class="needs-validation" id="invoice_form">
+                                <form method="POST" action="{{ route('cash-receipt.store')}}" class="needs-validation" id="invoice_form">
                                     @csrf
                                     <div class="card-body border-bottom border-bottom-dashed p-4">
                                         <div class="row mb-3">
@@ -58,7 +58,7 @@
                                             <div class="col-md-2 col-sm-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="invoicenoInput">RC No:</label>
-                                                    <input type="text" class="form-control bg-light border-0" id="numero_rc" name="numero_rc" placeholder="Invoice No" value="{{ $ultimoRc + 1 }}">
+                                                    <input type="text" class="form-control bg-light border-0" id="numero_rc" name="numero_rc" placeholder="Invoice No" value="{{ $ultimoRc + 1 }}" readonly="readonly">
                                                 </div>
                                                 
                                             </div>
