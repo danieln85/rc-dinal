@@ -212,7 +212,7 @@
                                                     <td class="text-center">{{ $ultimoCobro->abono }}</td>
                                                     <td>David Ojeda</td>
                                                     <td>
-                                                        <span class="badge bg-success-subtle text-{{ $ultimoCobro->estado == 'recibido' ? 'success' : ($ultimoCobro->estado == 'pendiente' ? 'warning' : 'danger') }} p-2">{{ strtoupper($ultimoCobro->estado_cobro) }}</span>
+                                                        <span class="badge bg-success-subtle text-{{ $ultimoCobro->estado == 'recibido' ? 'success' : ($ultimoCobro->estado == 'pendiente' ? 'warning' : 'danger') }} p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
                                                     </td>
                                                     
                                                     <td>{{ $ultimoCobro->estado_rc }}</td>
