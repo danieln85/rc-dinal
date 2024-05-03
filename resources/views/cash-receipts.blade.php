@@ -204,7 +204,7 @@
                                                     <td><img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle me-2">
                                                         <a href="#javascript: void(0);" class="text-body align-middle fw-medium">{{ $ultimoCobro->nombre_cliente }}</a>
                                                     </td>
-                                                    <td>morbi.quis@protonmail.org</td>
+                                                    <td>{{ $ultimoCobro->email_cliente }}</td>
 
                                                     <td>{{ $ultimoCobro->num_factura }}</td>
                                                     
