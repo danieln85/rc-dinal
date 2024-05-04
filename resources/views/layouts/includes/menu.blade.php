@@ -57,12 +57,24 @@
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="index.html">
-                                <i class="las la-house-damage"></i> <span data-key="t-dashboard">Dashboard</span>
+                            <a class="nav-link menu-link" href="{{route('dashboard')}}">
+                                <i class="las la-house-damage"></i> <span data-key="t-dashboard">Inicio</span>
                             </a>
                         </li>
 
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
+                        <li class="nav-item">
+                            <a href="{{route('cash-receipts')}}" class="nav-link menu-link">
+                                <i class="las la-file-invoice"></i> <span data-key="t-invoices">Recibos de caja</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{route('clients')}}" class="nav-link menu-link">
+                                <i class="las la-file-invoice"></i> <span data-key="t-invoices">Clientes</span>
+                            </a>
+                        </li>
+
+                        {{-- <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
 
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarInvoiceManagement" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarInvoiceManagement">
@@ -517,13 +529,22 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
+
 
                         <div class="help-box text-center">
-                            <img src="assets/images/create-invoice.png" class="img-fluid" alt="">
-                            <p class="mb-3 mt-2 text-muted">Upgrade To Pro For More Features</p>
+                            <img src="{{asset('images/create-invoice.png')}}" class="img-fluid" alt="">
+                            <p class="mb-3 mt-0 text-muted"><strong>RECIBOS DE CAJA</strong></p>
                             <div class="mt-3">
-                                <a href="invoice-add.html" class="btn btn-primary"> Create Invoice</a>
+                                <a href="{{route('select-client')}}" class="btn btn-primary"> Crear Recibo</a>
+                            </div>
+                        </div>
+
+                        <div class="help-box text-center">
+                            <img src="{{asset('images/create-invoice.png')}}" class="img-fluid" alt="">
+                            <p class="mb-3 mt-0 text-muted"><strong>USUARIOS</strong></p>
+                            <div class="mt-3">
+                                <a href="{{route('create-client')}}" class="btn btn-primary"> Crear Usuario</a>
                             </div>
                         </div>
 
