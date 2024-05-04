@@ -105,31 +105,42 @@
                                                                 <i class="las la-ellipsis-h align-middle fs-18"></i>
                                                             </button>
                                                             <ul class="dropdown-menu dropdown-menu-end">
+
                                                                 <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
+                                                                    <form method="GET" action="{{ route('client.show', $cliente->id) }}">
+                                                                        @csrf
+                                                                        <button type="submit" class="btn btn-link text-decoration-none" style="cursor: pointer;">
+                                                                            <i class="las la-eye fs-18 align-middle me-2 text-muted"></i> Ver
+                                                                        </button>
+                                                                    </form>
                                                                 </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
+
+                                                                                                                                                                  <li>
+                                                                    <form method="GET" action="{{ route('client.edit', $cliente->id) }}">
+                                                                        @csrf
+                                                                        <button type="submit" class="btn btn-link text-decoration-none" style="cursor: pointer;">
+                                                                            <i class="las la-pen fs-18 align-middle me-2 text-muted"></i> Editar
+                                                                        </button>
+                                                                    </form>
                                                                 </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
+                                                                {{-- <li>
+                                                                    <a class="dropdown-item" href="javascript:void(0);">
+                                                                        <i class="las la-file-download fs-18 align-middle me-2 text-muted"></i> Download
+                                                                    </a>
+                                                                </li> --}}
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
                                                                     <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
+                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i> Borrar
                                                                     </a>
                                                                 </li>
                                                             </ul>
+                                                            
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 @empty
-                                                <h3 class="mb-4 mt-2">Aún no hay clientes creados.</h3>
+                                                <h3 class="m-4">Aún no hay clientes creados.</h3>
                                                 @endforelse
 
                                                 

@@ -58,26 +58,51 @@ class ClientController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Client $client)
+    public function show($cliente_id)
     {
-        //
+        $cliente = Client::find($cliente_id);
+        if (!$cliente) {
+            // Manejar el caso en el que el cliente no existe
+        }
+    
+        return view('show-client', compact('cliente'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Client $client)
+    public function edit($cliente_id)
     {
-        //
+        $cliente = Client::find($cliente_id);
+        if (!$cliente) {
+            // Manejar el caso en el que el cliente no existe
+        }
+
+        return view('edit-client', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Client $client)
-    {
-        //
-    }
+    public function update(Request $request, Client $cliente)
+{
+    // Validar los datos enviados en la solicitud
+    $validatedData = $request->validate([
+        'nombre_cliente' => 'required|string|max:255',
+        'email_cliente' => 'required|string|email|max:100',
+        'nit' => 'required|string|max:20',
+        // Agrega más reglas de validación según sea necesario para otros campos
+    ]);
+
+    // Actualizar los atributos del cliente con los nuevos valores
+    $cliente->update($validatedData);
+
+    // Redirigir a una vista de detalles del cliente, por ejemplo
+    return redirect()->route('clients')->with('success', 'Cliente actualizado exitosamente');
+}
+
+    
+    
 
     /**
      * Remove the specified resource from storage.

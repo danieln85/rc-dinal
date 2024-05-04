@@ -542,9 +542,9 @@
 
                         <div class="help-box text-center">
                             <img src="{{asset('images/create-invoice.png')}}" class="img-fluid" alt="">
-                            <p class="mb-3 mt-0 text-muted"><strong>USUARIOS</strong></p>
+                            <p class="mb-3 mt-0 text-muted"><strong>CLIENTES</strong></p>
                             <div class="mt-3">
-                                <a href="{{route('create-client')}}" class="btn btn-primary"> Crear Usuario</a>
+                                <a href="{{route('create-client')}}" class="btn btn-primary"> Crear Cliente</a>
                             </div>
                         </div>
 

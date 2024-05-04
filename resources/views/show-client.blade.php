@@ -14,12 +14,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">CREAR NUEVO CLIENTE</h4>
+                                <h4 class="mb-sm-0">VER CLIENTE</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="{{route('clients')}}">Clientes</a></li>
-                                        <li class="breadcrumb-item active">Crear Cliente</li>
+                                        <li class="breadcrumb-item active">Ver Cliente</li>
                                     </ol>
                                 </div>
 
@@ -58,14 +58,14 @@
                                             <div class="col-md-2 col-sm-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="invoicenoInput">Id Cliente No:</label>
-                                                    <input type="text" class="form-control bg-light border-0" id="id" name="id" placeholder="Invoice No" value="{{ $ultimoId + 1 }}" readonly="readonly">
+                                                    <input type="text" class="form-control bg-light border-0" id="id" name="id" placeholder="Invoice No" value="{{ $cliente->id }}" readonly="readonly">
                                                 </div>
                                                 
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <label for="nombre_cliente">Nombre del Cliente</label>
-                                                    <input class="form-control" id="nombre_cliente" name="nombre_cliente">
+                                                    <input class="form-control" id="nombre_cliente" name="nombre_cliente" value="{{ $cliente->nombre_cliente }}" readonly="readonly">
                                                 </div>
                                             </div>
                                         </div>
@@ -73,19 +73,19 @@
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="email_cliente">Correo Electrónico</label>
-                                                    <input type="email" class="form-control" id="email_cliente" name="email_cliente">
+                                                    <input type="email" class="form-control" id="email_cliente" name="email_cliente" value="{{ $cliente->email_cliente }}" readonly="readonly">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 col-sm-4">
                                                 <div class="form-group">
                                                     <label for="nit">Nit</label>
-                                                    <input type="text" class="form-control" id="ni" name="nit">
+                                                    <input type="text" class="form-control" id="ni" name="nit" value="{{ $cliente->nit }}" readonly="readonly">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 col-sm-6">
                                                 <div class="form-group">
                                                     <label for="creado_por">Creado por:</label>
-                                                    <input type="text" class="form-control" id="creado_por" name="creado_por" value="{{ Auth::user()->name }}" readonly="readonly">
+                                                    <input type="text" class="form-control" id="creado_por" name="creado_por" value="{{ $cliente->creado_por }}" readonly="readonly">
                                                 </div>
                                             </div>
                                             
@@ -94,7 +94,7 @@
                                         <div class="hstack gap-2 justify-content-end d-print-none mt-4">
                                             {{-- <button type="submit" class="btn btn-info"><i class="ri-printer-line align-bottom me-1"></i> Save</button> --}}
                                             {{-- <a href="javascript:void(0);" class="btn btn-primary"><i class="ri-download-2-line align-bottom me-1"></i> Download Invoice</a> --}}
-                                            <button type="submit" class="btn btn-danger"><i class="ri-send-plane-fill align-bottom me-1"></i> Crear</button>
+                                            <a href="javascript:history.back()" class="btn btn-warning"><i class="align-bottom me-1"></i> Regresar</a>
                                         </div>
                                     </div>
                                 </form>

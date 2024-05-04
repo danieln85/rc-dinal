@@ -35,10 +35,16 @@ Route::middleware([
     Route::get('clientes', [ClientController::class, 'index'])->name('clients');
     Route::get('crear-clientes', [ClientController::class, 'create'])->name('create-client');
     Route::get('seleccionar-cliente', [ClientController::class, 'selectClient'])->name('select-client');
+    Route::put('actualizar-cliente/{cliente}', [ClientController::class, 'update'])->name('client.update');
     Route::post('/guardar-cliente', [ClientController::class, 'store'])->name('client.store');
 
    
     Route::post('/cliente-seleccionado', [CashReceiptController::class, 'selectedClient'])->name('store-selected-client');
+    Route::get('ver-cliente/cliente/{cliente}', [ClientController::class, 'show'])->name('client.show');
+
+    Route::get('cliente/{cliente}/edit', [ClientController::class, 'edit'])->name('client.edit');
+
+
 
 
     

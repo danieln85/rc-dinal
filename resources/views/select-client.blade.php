@@ -136,12 +136,23 @@
                                                             </button>
                                                             <ul class="dropdown-menu dropdown-menu-end">
                                                                 <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
+                                                                    <form method="GET" action="{{ route('client.show', $cliente->id) }}">
+                                                                        @csrf
+                                                                        @method('post')
+                                                                        <button type="submit" class="btn btn-link p-0 m-0 text-decoration-none" style="cursor: pointer;">
+                                                                            <i class="las la-eye fs-18 align-middle me-2 text-muted"></i> Ver
+                                                                        </button>
+                                                                    </form>
                                                                 </li>
+
                                                                 <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
+                                                                    <form method="GET" action="{{ route('client.update', $cliente->id) }}">
+                                                                        @csrf
+                                                                        @method('post')
+                                                                        <button type="submit" class="btn btn-link p-0 m-0 text-decoration-none" style="cursor: pointer;">
+                                                                            <i class="las la-pen fs-18 align-middle me-2 text-muted"></i> Editar
+                                                                        </button>
+                                                                    </form>
                                                                 </li>
                                                                 <li>
                                                                     <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
