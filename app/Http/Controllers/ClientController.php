@@ -20,7 +20,7 @@ class ClientController extends Controller
     public function selectClient()
     {
         $clientes = Client::all();
-        return view('clients', compact('clientes'));
+        return view('select-client', compact('clientes'));
     }
     /**
      * Show the form for creating a new resource.

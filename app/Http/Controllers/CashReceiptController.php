@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CashReceiptRequest;
 use App\Models\CobroFac;
+use App\Models\Client;
 use Illuminate\Support\Facades\Session;
 
 class CashReceiptController extends Controller
@@ -25,24 +26,25 @@ class CashReceiptController extends Controller
      */
     public function create()
     {
-        $ultimoRc = CobroFac::max('numero_rc');
+        
 
         return view('create-cash-receipt', compact('ultimoRc'));
     }
 
 
-    public function storeSelectedClient(Request $request)
+    public function selectedClient(Request $request)
     {
-        // Asegúrate de validar el ID del cliente para evitar problemas.
-        $validated = $request->validate([
-            'cliente_id' => 'required|exists:clientes,id' // Asegúrate de que el ID exista en la base de datos
-        ]);
+        $ultimoRc = CobroFac::max('numero_rc');
+        $cliente_id = $request->cliente_id;  
     
-        // Almacena el ID del cliente en la sesión
-        Session::put('cliente_id', $validated['cliente_id']);
+        // Recuperar el cliente usando el ID
+        $seleccionado = Client::find($cliente_id);
     
-        // Redirecciona a la vista donde se crea el recibo
-        return redirect()->route('create-cash-receipt');
+        if (!$seleccionado) { // Aquí se debe usar $clienteSeleccionado en lugar de $cliente
+            return back()->with('error', 'Cliente no encontrado.');
+        }
+    
+        return view('create-cash-receipt', compact('seleccionado', 'ultimoRc'));
     }
 
     /**

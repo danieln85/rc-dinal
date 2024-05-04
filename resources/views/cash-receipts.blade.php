@@ -31,7 +31,7 @@
 
                     <div class="row pb-4 gy-3">
                         <div class="col-sm-4">
-                            <a href="{{route('create-cash-receipt')}}" class="btn btn-primary addMembers-modal"><i class="las la-plus me-1"></i> Crear Recibo</a>
+                            <a href="{{route('select-client')}}" class="btn btn-primary addMembers-modal"><i class="las la-plus me-1"></i> Crear Recibo</a>
                         </div>
 
                         <div class="col-sm-auto ms-auto">
