@@ -14,12 +14,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">NUEVO CLIENTE</h4>
+                                <h4 class="mb-sm-0">CREAR NUEVO CLIENTE</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="{{route('cash-receipts')}}">Recibos de caja</a></li>
-                                        <li class="breadcrumb-item active">Nuevo Recibo de Caja</li>
+                                        <li class="breadcrumb-item active">Crear Cliente</li>
                                     </ol>
                                 </div>
 

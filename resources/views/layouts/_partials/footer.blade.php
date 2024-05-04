@@ -2,11 +2,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
-                <script>document.write(new Date().getFullYear())</script> © Invoika.
+                <script>document.write(new Date().getFullYear())</script> © Pixel Code Labs.
             </div>
             <div class="col-sm-6">
                 <div class="text-sm-end d-none d-sm-block">
-                    Design & Develop by Themesbrand
+                    Desarrollado por Pixel Code Labs
                 </div>
             </div>
         </div>
@@ -44,15 +44,15 @@
 <!-- Theme Settings -->
 <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="theme-settings-offcanvas">
 <div class="d-flex align-items-center bg-primary bg-gradient p-3 offcanvas-header">
-<h5 class="m-0 me-2 text-white">Theme Customizer</h5>
+<h5 class="m-0 me-2 text-white">Personalizador de temas</h5>
 
 <button type="button" class="btn-close btn-close-white ms-auto" id="customizerclose-btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 </div>
 <div class="offcanvas-body p-0">
 <div data-simplebar="" class="h-100">
     <div class="p-4">
-        <h6 class="mb-0 fw-semibold text-uppercase">Layout</h6>
-        <p class="text-muted">Choose your layout</p>
+        <h6 class="mb-0 fw-semibold text-uppercase">DISPOSICIÓN</h6>
+        <p class="text-muted">Elige tu diseño</p>
 
         <div class="row">
             <div class="col-4">
@@ -99,8 +99,8 @@
             <!-- end col -->
         </div>
 
-        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Color Scheme</h6>
-        <p class="text-muted">Choose Light or Dark Scheme.</p>
+        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Esquema de colores</h6>
+        <p class="text-muted">Elija esquema claro u oscuro.</p>
 
         <div class="colorscheme-cardradio">
             <div class="row">
@@ -126,7 +126,7 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Light</h5>
+                    <h5 class="fs-13 text-center mt-2">Claro</h5>
                 </div>
 
                 <div class="col-4">
@@ -151,14 +151,14 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Dark</h5>
+                    <h5 class="fs-13 text-center mt-2">Oscuro</h5>
                 </div>
             </div>
         </div>
 
         <div id="layout-width">
-            <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Layout Width</h6>
-            <p class="text-muted">Choose Fluid or Boxed layout.</p>
+            <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Ancho de diseño</h6>
+            <p class="text-muted">Elija diseño fluido o en caja.</p>
 
             <div class="row">
                 <div class="col-4">
@@ -183,7 +183,7 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Fluid</h5>
+                    <h5 class="fs-13 text-center mt-2">Fluido</h5>
                 </div>
                 <div class="col-4">
                     <div class="form-check card-radio">
@@ -207,25 +207,25 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Boxed</h5>
+                    <h5 class="fs-13 text-center mt-2">En caja</h5>
                 </div>
             </div>
         </div>
 
         <div id="layout-position">
-            <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Layout Position</h6>
-            <p class="text-muted">Choose Fixed or Scrollable Layout Position.</p>
+            <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Posición de diseño</h6>
+            <p class="text-muted">Elija Posición de diseño fija o desplazable.</p>
 
             <div class="btn-group radio" role="group">
                 <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed">
-                <label class="btn btn-light w-sm" for="layout-position-fixed">Fixed</label>
+                <label class="btn btn-light w-sm" for="layout-position-fixed">Fija</label>
 
                 <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
-                <label class="btn btn-light w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
+                <label class="btn btn-light w-sm ms-0" for="layout-position-scrollable">Desplazable</label>
             </div>
         </div>
-        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Topbar Color</h6>
-        <p class="text-muted">Choose Light or Dark Topbar Color.</p>
+        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Color de la barra superior</h6>
+        <p class="text-muted">Elija el color de la barra superior claro u oscuro.</p>
 
         <div class="row">
             <div class="col-4">
@@ -250,7 +250,7 @@
                         </span>
                     </label>
                 </div>
-                <h5 class="fs-13 text-center mt-2">Light</h5>
+                <h5 class="fs-13 text-center mt-2">Claro</h5>
             </div>
             <div class="col-4">
                 <div class="form-check card-radio">
@@ -274,13 +274,13 @@
                         </span>
                     </label>
                 </div>
-                <h5 class="fs-13 text-center mt-2">Dark</h5>
+                <h5 class="fs-13 text-center mt-2">Oscuro</h5>
             </div>
         </div>
 
         <div id="sidebar-size">
-            <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Size</h6>
-            <p class="text-muted">Choose a size of Sidebar.</p>
+            <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Tamaño de la barra lateral</h6>
+            <p class="text-muted">Elige un tamaño de barra lateral.</p>
 
             <div class="row">
                 <div class="col-4">
@@ -305,7 +305,7 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Default</h5>
+                    <h5 class="fs-13 text-center mt-2">Por defecto</h5>
                 </div>
 
                 <div class="col-4">
@@ -330,7 +330,7 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Compact</h5>
+                    <h5 class="fs-13 text-center mt-2">Compacto</h5>
                 </div>
 
                 <div class="col-4">
@@ -355,7 +355,7 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Small (Icon View)</h5>
+                    <h5 class="fs-13 text-center mt-2">Pequeño (Vista de icono)</h5>
                 </div>
 
                 <div class="col-4">
@@ -380,14 +380,14 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Small Hover View</h5>
+                    <h5 class="fs-13 text-center mt-2">Vista flotante pequeña</h5>
                 </div>
             </div>
         </div>
 
         <div id="sidebar-view">
-            <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar View</h6>
-            <p class="text-muted">Choose Default or Detached Sidebar view.</p>
+            <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Vista de la barra lateral</h6>
+            <p class="text-muted">Elige la vista de barra lateral por defecto o separada.</p>
 
             <div class="row">
                 <div class="col-4">
@@ -412,7 +412,7 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Default</h5>
+                    <h5 class="fs-13 text-center mt-2">Por defecto</h5>
                 </div>
                 <div class="col-4">
                     <div class="form-check sidebar-setting card-radio">
@@ -437,13 +437,13 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Detached</h5>
+                    <h5 class="fs-13 text-center mt-2">Separada</h5>
                 </div>
             </div>
         </div>
         <div id="sidebar-color">
-            <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Color</h6>
-            <p class="text-muted">Choose a color of Sidebar.</p>
+            <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Color de barra lateral</h6>
+            <p class="text-muted">Elige un color de barra lateral.</p>
 
             <div class="row">
                 <div class="col-4">
@@ -468,7 +468,7 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Light</h5>
+                    <h5 class="fs-13 text-center mt-2">Claro</h5>
                 </div>
                 <div class="col-4">
                     <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient.show">
@@ -492,7 +492,7 @@
                             </span>
                         </label>
                     </div>
-                    <h5 class="fs-13 text-center mt-2">Dark</h5>
+                    <h5 class="fs-13 text-center mt-2">Oscuro</h5>
                 </div>
 
             </div>
@@ -506,10 +506,7 @@
 <div class="offcanvas-footer border-top p-3 text-center">
 <div class="row">
     <div class="col-6">
-        <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
-    </div>
-    <div class="col-6">
-        <a href="https://1.envato.market/Invoika-admin" target="_blank" class="btn btn-primary w-100">Buy Now</a>
+        <button type="button" class="btn btn-light w-100" id="reset-layout">Resetear</button>
     </div>
 </div>
 </div>
