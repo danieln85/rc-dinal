@@ -230,13 +230,13 @@
                                                             <ul class="dropdown-menu dropdown-menu-end">
                                                                 <li>
                                                                     <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
+                                                                        Ver</button>
                                                                 </li>
-                                                                <li>
+                                                                {{-- <li>
                                                                     <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
                                                                         Edit</button>
-                                                                </li>
-                                                                <li>
+                                                                </li> --}}
+                                                                {{-- <li>
                                                                     <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
                                                                         Download</a>
                                                                 </li>
@@ -246,7 +246,7 @@
                                                                         <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
                                                                         Delete
                                                                     </a>
-                                                                </li>
+                                                                </li> --}}
                                                             </ul>
                                                         </div>
                                                     </td>

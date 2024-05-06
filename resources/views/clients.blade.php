@@ -115,7 +115,7 @@
                                                                     </form>
                                                                 </li>
 
-                                                                                                                                                                  <li>
+                                                                                                                                                                      <li>
                                                                     <form method="GET" action="{{ route('client.edit', $cliente->id) }}">
                                                                         @csrf
                                                                         <button type="submit" class="btn btn-link text-decoration-none" style="cursor: pointer;">
