@@ -84,7 +84,7 @@
                                             </div>
                                             <div class="col-md-2 col-sm-6">
                                                 <div class="form-group">
-                                                    <label for="cobro_abono">Pagó</label>
+                                                    <label for="cobro_abono">Valor pago</label>
                                                     <input type="text" class="form-control" id="cobro_abono" name="cobro_abono">
                                                 </div>
                                             </div>
@@ -135,8 +135,8 @@
                                             </div>
                                             <div class="col-md-3 col-sm-4">
                                                 <div class="form-group">
-                                                    <label for="creado_por">Creado por</label>
-                                                    <input type="text" class="form-control" id="creado_por" name="creado_por" value="{{ Auth::user()->name }}" readonly="readonly" disabled>
+                                                    <label for="cobrado_por">Creado por</label>
+                                                    <input type="text" class="form-control" id="cobrado_por" name="cobrado_por" value="{{ Auth::user()->name }}" readonly="readonly" disabled>
                                                 </div>
                                             </div>
                                         </div>
