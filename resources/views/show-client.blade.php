@@ -42,7 +42,7 @@
                         </div>
                     @endif
 
-                                <form method="POST" action="{{ route('client.store')}}" class="needs-validation" id="invoice_form">
+                                <form method="POST" action="" class="needs-validation" id="invoice_form">
                                     @csrf
                                     <div class="card-body border-bottom border-bottom-dashed p-4">
                                         <div class="row mb-3">

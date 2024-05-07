@@ -9,5 +9,7 @@ class CobroFac extends Model
 {
     use HasFactory;
     protected $table = 'cobros_fac';
+    protected $guarded = [];
+    
 
 }

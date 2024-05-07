@@ -36,7 +36,7 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center">
                                         <div class="flex-grow-1">
-                                            <form action="{{ route('store-selected-client') }}"     method="POST">
+                                            <form action="{{ route('create-cash-receipt') }}"     method="POST">
                                                 @csrf
                                                 <div class="form-group">
                                                     {{-- <label for="cliente_id">Seleccione un Cliente:</label> --}}

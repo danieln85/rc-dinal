@@ -166,7 +166,11 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="card">
-                                
+                                @if (session('error'))
+                                <div class="alert alert-danger">
+                                    {{ session('error') }}
+                                </div>
+                                @endif
                                 @if (session('success'))
                                     <div class="alert alert-success">
                                         {{ session('success') }}
@@ -229,8 +233,12 @@
                                                             </button>
                                                             <ul class="dropdown-menu dropdown-menu-end">
                                                                 <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        Ver</button>
+                                                                    <form method="GET" action="{{ route('cash-receipt.show', $ultimoCobro->id) }}">
+                                                                        @csrf
+                                                                        <button type="submit" class="btn btn-link text-decoration-none" style="cursor: pointer;">
+                                                                            <i class="las la-eye fs-18 align-middle me-2 text-muted"></i> Ver
+                                                                        </button>
+                                                                    </form>
                                                                 </li>
                                                                 {{-- <li>
                                                                     <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>

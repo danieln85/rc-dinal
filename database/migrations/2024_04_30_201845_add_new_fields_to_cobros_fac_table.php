@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('cobros_fac', function (Blueprint $table) {
 
             // $table->id();
-            // $table->date('numero_rc')->nullable();
+            // $table->string('numero_rc')->nullable();
             // $table->date('date_cobro')->nullable();
             // $table->string('num_factura')->nullable();
             // $table->string('cobro_abono')->nullable();
