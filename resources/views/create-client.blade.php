@@ -58,7 +58,7 @@
                                             <div class="col-md-2 col-sm-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="invoicenoInput">Id Cliente No:</label>
-                                                    <input type="text" class="form-control bg-light border-0" id="id" name="id" placeholder="Invoice No" value="{{ $ultimoId + 1 }}" readonly="readonly" disabled>
+                                                    <input type="text" class="form-control bg-light border-0" id="id" name="id" placeholder="Invoice No" value="{{ $ultimoId + 1 }}" readonly="readonly">
                                                 </div>
                                                 
                                             </div>
@@ -85,7 +85,7 @@
                                             <div class="col-md-3 col-sm-6">
                                                 <div class="form-group">
                                                     <label for="creado_por">Creado por:</label>
-                                                    <input type="text" class="form-control" id="creado_por" name="creado_por" value="{{ Auth::user()->name }}" readonly="readonly" disabled>
+                                                    <input type="text" class="form-control" id="creado_por" name="creado_por" value="{{ Auth::user()->name }}" readonly="readonly">
                                                 </div>
                                             </div>
                                             
