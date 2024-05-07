@@ -35,16 +35,17 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row align-items-center gy-4">
-                                        <div class="col-sm-8">
+                                        <div class="col-sm-6">
                                             <div class="box">
-                                                <h5 class="fs-20 text-truncate">Professional Invoices Made Easy.</h5>
-                                                <p class="text-muted fs-15">Quickly understand who your best customers little and motivation to pay thair bills.</p>
-                                                <a href="" class="btn btn-primary">Warch Tutorial</a>
+                                                {{-- <h5 class="fs-20 text-truncate"></h5> --}}
+                                                <p class="text-muted fs-15">Desde este botón puedes crear recibos de caja.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-primary">+ Crear Recibo</a>
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <div class="text-center px-2">
-                                                <img src="assets/images/invoice-widget.png" class="img-fluid" style="height: 141px;" alt="">
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                <p class="text-muted fs-15">Desde este botón puedes crear clientes.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-primary">+ Crear Clientes</a>
                                             </div>
                                         </div>
                                     </div>
@@ -53,70 +54,78 @@
                         </div>
 
                         <div class="col-xl-7">
-                            <div class="card dash-mini">
-                                <div class="card-header border-0 align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">This Week's Overview</h4>
-                                    <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <a class="text-reset" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="fw-semibold text-uppercase fs-14">Sort by: </span><span class="text-muted">Current Week<i class="las la-angle-down fs-12 ms-2"></i></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Today</a>
-                                                <a class="dropdown-item" href="#">Last Week</a>
-                                                <a class="dropdown-item" href="#">Last Month</a>
-                                                <a class="dropdown-item" href="#">Current Year</a>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row align-items-center gy-4">
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                <p class="text-muted fs-15">Desde este botón puedes confirmar el dinero recibido.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-primary">Dinero Recibido</a>
                                             </div>
                                         </div>
-                                    </div>
-                                </div><!-- end card header -->
-
-                                <div class="card-body pt-1">
-                                    <div class="row">
-                                        <div class="col-lg-4 mini-widget pb-3 pb-lg-0">
-                                            <div class="d-flex align-items-end">
-                                                <div class="flex-grow-1">
-                                                    <h2 class="mb-0 fs-24"><span class="counter-value" data-target="197">54</span></h2>
-                                                    <h5 class="text-muted fs-16 mt-2 mb-0">Clients Added</h5>
-                                                    <p class="text-muted mt-3 pt-1 mb-0 text-truncate"> <span class="badge bg-info me-1">1.15%</span>  since last week</p>
-                                                </div>
-                                                <div class="flex-shrink-0 text-end dash-widget">
-                                                    <div id="mini-chart1" data-colors='["--in-primary", "--in-light"]' class="apex-charts"></div>
-                                                </div>
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                <p class="text-muted fs-15">Desde este botón puedes ingresar los almuerzos del día.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-primary">+ Almuerzos</a>
                                             </div>
                                         </div>
-
-                                        <div class="col-lg-4 mini-widget py-3 py-lg-0">
-                                            <div class="d-flex align-items-end">
-                                                <div class="flex-grow-1">
-                                                    <h2 class="mb-0 fs-24"><span class="counter-value" data-target="634">124</span></h2>
-                                                    <h5 class="text-muted fs-16 mt-2 mb-0">Contracts Signed</h5>
-                                                    <p class="text-muted mt-3 pt-1 mb-0 text-truncate"> <span class="badge bg-danger me-1">1.15%</span>  since last week</p>
-                                                </div>
-                                                <div class="flex-shrink-0 text-end dash-widget">
-                                                    <div id="mini-chart2" data-colors='["--in-primary", "--in-light"]' class="apex-charts"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 mini-widget pt-3 pt-lg-0">
-                                            <div class="d-flex align-items-end">
-                                                <div class="flex-grow-1">
-                                                    <h2 class="mb-0 fs-24"><span class="counter-value" data-target="512">214</span></h2>
-                                                    <h5 class="text-muted fs-16 mt-2 mb-0">Invoice Sent</h5>
-                                                    <p class="text-muted mt-3 pt-1 mb-0 text-truncate"> <span class="badge bg-info me-1">3.14%</span>  since last week</p>
-                                                </div>
-                                                <div class="flex-shrink-0 text-end dash-widget">
-                                                    <div id="mini-chart3" data-colors='["--in-primary", "--in-light"]' class="apex-charts"></div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col -->
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- end row -->
+
+
+                    <div class="row">
+                        <div class="col-xl-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row align-items-center gy-4">
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                {{-- <h5 class="fs-20 text-truncate"></h5> --}}
+                                                <p class="text-muted fs-15">Desde este botón puedes crear recibos de caja.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-success">+ Crear Recibo</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                <p class="text-muted fs-15">Desde este botón puedes crear clientes.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-success">+ Crear Clientes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row align-items-center gy-4">
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                <p class="text-muted fs-15">Desde este botón puedes confirmar el dinero recibido.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-success">Dinero Recibido</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                <p class="text-muted fs-15">Desde este botón puedes ingresar los almuerzos del día.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-success">+ Almuerzos</a>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+
 
                     <div class="row">
                         <div class="col-xl-8">
@@ -461,421 +470,7 @@
                     </div>
                     <!-- end row -->
 
-                    <div class="row">
-                        <div class="col-xl-7">
-                            <div class="card">
-                                <div class="card-header border-0 align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Sales Revenue</h4>
-                                    <div class="dropdown">
-                                        <a class="text-reset" href="#" id="dropdownMenuYear" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="fw-semibold text-uppercase fs-14">Sort By: </span> <span class="text-muted">Years<i class="las la-angle-down fs-12 ms-2"></i></span>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuYear">
-                                            <a class="dropdown-item" href="#">Monthly</a>
-                                            <a class="dropdown-item" href="#">Yearly</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-xl-7">
-                                            <div class="py-3">
-                                                <div id="world-map-markers" style="height: 317px"></div>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-xl-5">
-                                            <div class="table-responsive">
-                                                    <table class="table table-centered align-middle table-nowrap mb-0">
-                                                        <thead>
-                                                            <tr class="text-uppercase">
-                                                                <th style="width: 500px;">Countrie</th>
-                                                                <th style="width: 30%;">Order</th>
-                                                                <th style="width: 15%;">Earning</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img src="assets/images/flags/us.svg" class="rounded" alt="user-image" height="22">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            <p class="mb-0 text-truncate">US</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>6253</td>
-                                                                <td>$26,524</td>
-                                                            </tr>
-            
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img src="assets/images/flags/italy.svg" class="rounded" alt="user-image" height="22">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            <p class="mb-0 text-truncate">Italy</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>5563</td>
-                                                                <td>$32,562</td>
-                                                            </tr>
-            
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img src="assets/images/flags/spain.svg" class="rounded" alt="user-image" height="22">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            <p class="mb-0 text-truncate">Spain</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>3258</td>
-                                                                <td>$65,214</td>
-                                                            </tr>
-            
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img src="assets/images/flags/french.svg" class="rounded" alt="user-image" height="22">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            <p class="mb-0 text-truncate">French</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>6325</td>
-                                                                <td>$63,254</td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img src="assets/images/flags/russia.svg" class="rounded" alt="user-image" height="22">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            <p class="mb-0 text-truncate">Russia</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>8652</td>
-                                                                <td>$53,621</td>
-                                                            </tr>
-            
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img src="assets/images/flags/ae.svg" class="rounded" alt="user-image" height="22">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            <p class="mb-0 text-truncate">Arabic</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>4256</td>
-                                                                <td>$86,526</td>
-                                                            </tr>
-                                                        
-                                                        </tbody>
-                                                    </table>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="col-xl-5">
-                            <div class="card">
-                                <div class="card-header border-0 align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Invoice List</h4>
-                                    <div class="dropdown">
-                                        <a class="text-reset" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="fw-semibold text-uppercase fs-14">Sort By: </span>  <span class="text-muted">Weekly<i class="las la-angle-down fs-12 ms-2"></i></span>
-                                          
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                                            <a class="dropdown-item" href="#">Monthly</a>
-                                            <a class="dropdown-item" href="#">Yearly</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-2">
-                                    <div class="table-responsive table-card">
-                                        <table class="table table-striped table-nowrap align-middle mb-0">
-                                            <thead>
-                                                <tr class="text-muted text-uppercase">
-                                                    <th style="width: 50px;">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="checkAll" value="option">
-                                                        </div>
-                                                    </th>
-                                                    <th scope="col">Invoice ID</th>
-                                                    <th scope="col">Client</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col" style="width: 16%;">Status</th>
-                                                    <th scope="col" style="width: 12%;">Action</th>
-                                                </tr>
-                                            </thead>
-        
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check1" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="mb-0">Lec-2152</p></td>
-                                                    <td><img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle">Donald Risher</a>
-                                                    </td>
-                                                    <td>20 Sep, 2022</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check2" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="mb-0">Lec-2153</p></td>
-                                                    <td><img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle">Brody Holman</a>
-                                                    </td>
-                                                    <td>12 Arl, 2022</td>
-                                                    <td><span class="badge bg-warning-subtle text-warning p-2">Unpaid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check3" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="mb-0">Lec-2154</p></td>
-                                                    <td><img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle">Jolie Hood</a>
-                                                    </td>
-                                                    <td>28 Mar, 2022</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check5" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="mb-0">Lec-2156</p></td>
-                                                    <td><img src="assets/images/users/avatar-5.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle">Howard Lyons</a>
-                                                    </td>
-                                                    <td>18 Sep, 2022</td>
-                                                    <td><span class="badge bg-info-subtle text-info p-2">Refund</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check6" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="mb-0">Lec-2157</p></td>
-                                                    <td><img src="assets/images/users/avatar-6.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle">Howard Oneal</a>
-                                                    </td>
-                                                    <td>12 Feb, 2022</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">Paid</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-        
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check7" value="option">
-                                                        </div>
-                                                    </td>
-                                                    <td><p class="mb-0">Lec-2158</p></td>
-                                                    <td><img src="assets/images/users/avatar-7.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body align-middle">Jena Hall</a>
-                                                    </td>
-                                                    <td>30 Nov, 2022</td>
-                                                    <td><span class="badge bg-danger-subtle text-danger p-2">Cancel</span></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-eye fs-18 align-middle me-2 text-muted"></i>
-                                                                        View</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody><!-- end tbody -->
-                                        </table><!-- end table -->
-                                    </div><!-- end table responsive -->
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end row -->
 
                 </div>
                 <!-- container-fluid -->

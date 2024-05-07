@@ -37,10 +37,10 @@
                     <div class="navbar-brand-box horizontal-logo">
                         <a href="index.html" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
+                                <img src="{{ asset('images/logo/logo-dinalpartes.png') }}" alt="" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="assets/images/logo-dark.png" alt="" height="21">
+                                <img src="{{ asset('images/logo/logo-dinalpartes.png') }}" alt="" height="21">
                             </span>
                         </a>
     
@@ -154,7 +154,7 @@
     
                      
     
-                    <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                    {{-- <div class="dropdown d-md-none topbar-head-dropdown header-item">
                         <button type="button" class="btn btn-icon btn-topbar btn-ghost-primary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="bx bx-search fs-22"></i>
                         </button>
@@ -223,7 +223,7 @@
                                 <span class="align-middle">Arabic</span>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
     
                     <div class="ms-1 header-item d-none d-sm-flex">
                         <button type="button" class="btn btn-icon btn-topbar btn-ghost-primary rounded-circle" data-toggle="fullscreen">
@@ -371,9 +371,9 @@
                     <div class="dropdown header-item">
                         <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="d-flex align-items-center">
-                                <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-4.jpg" alt="Header Avatar">
+                                <img class="rounded-circle header-profile-user" src="{{ asset('images/users/avatar-3.jpg') }}" alt="Header Avatar">
                                 <span class="text-start ms-xl-2">
-                                    <span class="d-none d-xl-inline-block fw-medium user-name-text fs-16">Calvin D. <i class="las la-angle-down fs-12 ms-1"></i></span>
+                                    <span class="d-none d-xl-inline-block fw-medium user-name-text fs-16">{{ auth()->user()->name }} <i class="las la-angle-down fs-12 ms-1"></i></span>
                                 </span>
                             </span>
                         </button>
@@ -384,7 +384,14 @@
                             <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench fs-15 align-middle me-1"></i> <span key="t-settings">Settings</span></a>
                             <a class="dropdown-item" href="auth-lockscreen.html"><i class="bx bx-lock-open fs-15 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-danger" href="#"><i class="bx bx-power-off fs-15 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                            <a class="dropdown-item text-danger" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="bx bx-power-off fs-15 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span>
+                            </a>
+                            
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            
                         </div>
                     </div>
                 </div>
