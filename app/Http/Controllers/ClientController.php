@@ -19,7 +19,7 @@ class ClientController extends Controller
 
     public function selectClient()
     {
-        $clientes = Client::all();
+        $clientes = Client::orderBy('nombre_cliente')->get();
         return view('select-client', compact('clientes'));
     }
     /**
