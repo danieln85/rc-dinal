@@ -40,7 +40,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                    @endif
+                                @endif
 
                                 <form method="POST" action="{{ route('client.store')}}" class="needs-validation" id="invoice_form">
                                     @csrf

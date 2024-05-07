@@ -92,7 +92,7 @@
                                                 <div class="form-check mt-4">
                                                     <label>Abono</label>
                                                     <input type="checkbox" class="form-check-input" id="abono" name="abono" value="si">
-                                                    <label class="form-check-label" for="abono">Sí</label>
+                                                    <label class="form-check-label" for="abono"></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -136,7 +136,7 @@
                                             <div class="col-md-3 col-sm-4">
                                                 <div class="form-group">
                                                     <label for="cobrado_por">Creado por</label>
-                                                    <input type="text" class="form-control" id="cobrado_por" name="cobrado_por" value="{{ Auth::user()->name }}" readonly="readonly" disabled>
+                                                    <input type="text" class="form-control" id="cobrado_por" name="cobrado_por" value="{{ Auth::user()->name }}" readonly="readonly">
                                                 </div>
                                             </div>
                                         </div>
