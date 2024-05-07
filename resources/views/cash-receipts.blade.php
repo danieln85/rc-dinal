@@ -194,7 +194,7 @@
                                                     <th scope="col">COBRO</th>
                                                     <th scope="col">ABONO</th>
                                                     <th scope="col">COBRÓ</th>
-                                                    <th scope="col">$$$</th>
+                                                    <th scope="col" class="text-center">$$$</th>
                                                     <th scope="col">ESTADO</th>
                                                     <th scope="col" style="width: 12%;">Action</th>
                                                 </tr>
@@ -220,10 +220,16 @@
                                                     
                                                     <td>{{ $ultimoCobro->cobro_abono }}</td>
                                                     <td class="text-center">{{ $ultimoCobro->abono }}</td>
-                                                    <td>David Ojeda</td>
+                                                    <td>{{ $ultimoCobro->cobro_abono }}</td>
                                                     <td>
-                                                        <span class="badge bg-success-subtle text-{{ $ultimoCobro->estado == 'recibido' ? 'success' : ($ultimoCobro->estado == 'pendiente' ? 'warning' : 'danger') }} p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
+                                                        <span class="badge 
+                                                            @if($ultimoCobro->estado_dinero == 'recibido') bg-success text-white
+                                                            @elseif($ultimoCobro->estado_dinero == 'pendiente') bg-warning text-white
+                                                            @elseif($ultimoCobro->estado_dinero == 'admin') bg-danger text-white
+                                                            @endif
+                                                            p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
                                                     </td>
+                                                    
                                                     
                                                     <td>{{ $ultimoCobro->estado_rc }}</td>
                                                     <td>
@@ -271,25 +277,9 @@
                     </div>
 
                     <div class="row align-items-center mb-4 gy-3">
-                        <div class="col-md-5">
-                            <p class="mb-0 text-muted">Showing <b>1</b> to <b>5</b> of <b>10</b> results</p>
-                        </div>
-                        <div class="col-sm-auto ms-auto">
-                            <nav aria-label="...">
-                                <ul class="pagination mb-0">
-                                  <li class="page-item disabled">
-                                    <span class="page-link">Previous</span>
-                                  </li>
-                                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                  <li class="page-item" aria-current="page">
-                                    <span class="page-link">2</span>
-                                  </li>
-                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                  <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                  </li>
-                                </ul>
-                              </nav>
+
+                        <div class="">
+                            {{$ultimosCobros ->links()}}
                         </div>
                     </div>
                 </div>

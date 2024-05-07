@@ -18,8 +18,7 @@ class CashReceiptController extends Controller
     public function index()
     {
         $ultimosCobros = CobroFac::orderBy('numero_rc', 'desc')
-                          ->limit(10)
-                          ->get();
+        ->paginate(20); // 20 registros por página
         return view('cash-receipts', compact('ultimosCobros'));
     }
 
