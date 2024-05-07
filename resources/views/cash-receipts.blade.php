@@ -220,7 +220,7 @@
                                                     
                                                     <td>{{ $ultimoCobro->cobro_abono }}</td>
                                                     <td class="text-center">{{ $ultimoCobro->abono }}</td>
-                                                    <td>{{ $ultimoCobro->cobro_abono }}</td>
+                                                    <td>{{ $ultimoCobro->cobrado_por }}</td>
                                                     <td>
                                                         <span class="badge 
                                                             @if($ultimoCobro->estado_dinero == 'recibido') bg-success text-white

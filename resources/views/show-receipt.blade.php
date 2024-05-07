@@ -61,7 +61,7 @@
                                             <div class="col-md-2 col-sm-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="invoicenoInput">RC No:</label>
-                                                    <input type="text" class="form-control bg-light border-0" id="numero_rc" name="numero_rc" placeholder="Invoice No" value="{{ $recibo->id }}" readonly="readonly" disabled>
+                                                    <input type="text" class="form-control bg-light border-0" id="numero_rc" name="numero_rc" placeholder="Invoice No" value="{{ $recibo->numero_rc }}" readonly="readonly" disabled>
                                                 </div>
                                                 
                                             </div>

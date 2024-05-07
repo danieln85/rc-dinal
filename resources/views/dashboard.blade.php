@@ -30,6 +30,7 @@
                     </div>
                     <!-- end page title -->
 
+                    <!-- PRIMERA FILA -->
                     <div class="row">
                         <div class="col-xl-5">
                             <div class="card">
@@ -78,6 +79,8 @@
                     <!-- end row -->
 
 
+
+                    <!-- SEGUNDA FILA -->
                     <div class="row">
                         <div class="col-xl-5">
                             <div class="card">
@@ -124,6 +127,59 @@
                         </div>
                     </div>
                     <!-- end row -->
+
+
+                    <!-- TERCERA FILA -->
+                    <div class="row">
+                        <div class="col-xl-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row align-items-center gy-4">
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                {{-- <h5 class="fs-20 text-truncate"></h5> --}}
+                                                <p class="text-muted fs-15">Desde este botón puedes crear recibos de caja.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-success">+ Crear Recibo</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                <p class="text-muted fs-15">Desde este botón puedes crear clientes.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-success">+ Crear Clientes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row align-items-center gy-4">
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                <p class="text-muted fs-15">Desde este botón puedes confirmar el dinero recibido.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-success">Dinero Recibido</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="box">
+                                                <p class="text-muted fs-15">Desde este botón puedes ingresar los almuerzos del día.</p>
+                                                <a href="{{ route('select-client')}}" class="btn btn-success">+ Almuerzos</a>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+
+
+
 
 
 
