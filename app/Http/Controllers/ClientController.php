@@ -36,6 +36,7 @@ class ClientController extends Controller
      */
     public function store(ClientRequest $request)
     {
+        
         $cliente = new Client();
 
     // Asignar los valores de los campos a la instancia del modelo

@@ -83,7 +83,7 @@ class CashReceiptController extends Controller
     $cobroFac->informacion = $request->input('informacion');
     $cobroFac->estado_rc = 'activo';
     $cobroFac->estado_dinero = 'pendiente';
-    $cobroFac->cobrado_por = 'David Ojeda';
+    $cobroFac->cobrado_por = $request->input('cobrado_por');
      
              // Asignar el número de recibo consecutivo
              $cobroFac->numero_rc = $numeroConsecutivo;
