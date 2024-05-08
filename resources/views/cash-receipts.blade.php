@@ -189,10 +189,10 @@
                                                     <th scope="col">FECHA</th>
                                                     <th scope="col"># RC</th>
                                                     <th scope="col" style="width: 20%;">CLIENTE</th>
-                                                    <th scope="col" style="width: 20%;">CORREO</th>
+                                                    {{-- <th scope="col" style="width: 20%;">CORREO</th> --}}
                                                     <th scope="col">FACTURA</th>
                                                     <th scope="col">COBRO</th>
-                                                    <th scope="col">ABONO</th>
+                                                    {{-- <th scope="col">ABONO</th> --}}
                                                     <th scope="col">COBRÓ</th>
                                                     <th scope="col" class="text-center">$$$</th>
                                                     <th scope="col">ESTADO</th>
@@ -212,14 +212,14 @@
                                                     <td>{{ $ultimoCobro->date_cobro }}</td>
                                                     <td><p class="fw-medium mb-0">{{ $ultimoCobro->numero_rc }}</p></td>
                                                     <td>
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">{{ Illuminate\Support\Str::limit($ultimoCobro->nombre_cliente, 15) }}</a>
+                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">{{ Illuminate\Support\Str::limit($ultimoCobro->nombre_cliente, 20) }}</a>
                                                     </td>
-                                                    <td>{{ Illuminate\Support\Str::limit($ultimoCobro->email_cliente, 15) }}</td>
+                                                    {{-- <td>{{ Illuminate\Support\Str::limit($ultimoCobro->email_cliente, 15) }}</td> --}}
 
                                                     <td>{{ $ultimoCobro->num_factura }}</td>
                                                     
                                                     <td>{{ $ultimoCobro->cobro_abono }}</td>
-                                                    <td class="text-center">{{ $ultimoCobro->abono }}</td>
+                                                    {{-- <td class="text-center">{{ $ultimoCobro->abono }}</td> --}}
                                                     <td>{{ $ultimoCobro->cobrado_por }}</td>
                                                     <td>
                                                         <span class="badge 
@@ -246,14 +246,15 @@
                                                                         </button>
                                                                     </form>
                                                                 </li>
+                                                                <li>
+                                                                    <a class="dropdown-item" href="{{ route('rc-pdf') }}"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
+                                                                        Download</a>
+                                                                </li>
                                                                 {{-- <li>
                                                                     <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
                                                                         Edit</button>
                                                                 </li> --}}
-                                                                {{-- <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
-                                                                </li>
+                                                                {{-- 
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
                                                                     <a class="dropdown-item remove-item-btn" href="#">
