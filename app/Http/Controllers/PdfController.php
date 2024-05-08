@@ -13,8 +13,8 @@ class PdfController extends Controller
         // Obtener los datos del modelo
         $datos = CobroFac::findOrFail($id);
 
-        // $pdf = Pdf::loadView('pdf.rc-pdf', ['datos' => $datos]);
-        // return $pdf->download('recibo-de-caja.pdf');
-        return view('pdf.rc-pdf', ['datos' => $datos]);
+        $pdf = Pdf::loadView('pdf.rc-pdf', ['datos' => $datos]);
+        return $pdf->download('recibo-de-caja.pdf');
+        // return view('pdf.rc-pdf', ['datos' => $datos]);
     }
 }

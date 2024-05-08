@@ -4055,7 +4055,7 @@ table.invo-payment-table.invo-payment-table {
 										<div class="font-md-grey color-grey wid-20">{{$datos->id}}</div>
 									</div>
 									<div class="invo-head-wrap invoi-date-wrap invoi-date-wrap-agency">
-										<div class="color-light-black font-md wid-40 ">Invoice Date:</div>
+										<div class="color-light-black font-md wid-40 ">Fecha:</div>
 										<div class="font-md-grey color-grey wid-20 ">{{$datos->date_cobro}}</div>
 									</div>
 								</div>
@@ -4093,8 +4093,8 @@ table.invo-payment-table.invo-payment-table {
 								<div class="font-md-grey color-grey">{{$datos->num_factura}}</div>
 							</div>
 							<div class="bus-detail-col border-bottom">
-								<div class="font-md color-light-black bus-type">Valor del pago:</div>
-								<div class="font-md-grey color-grey">{{$datos->cobro_abono}}</div>
+								<div class="font-md color-light-black bus-type">Valor Recibido:</div>
+								<div class="font-md-grey color-grey">${{$datos->cobro_abono}}</div>
 							</div>
 							<div class="bus-detail-col seat-col">
 								<div class="font-md color-light-black bus-type">Método de pago:</div>
@@ -4117,31 +4117,37 @@ table.invo-payment-table.invo-payment-table {
 						<!--Invoice additional info start here -->
 						<div class="invo-addition-wrap pt-20">
 							<div class="invo-add-info-content bus-term-cond-content">
-								<h3 class="font-md color-light-black">Terms & Condition:</h3>
+								<h3 class="font-md color-light-black">Recomendaciones:</h3>
 								<div class="term-condi-list pt-10">
 									<ul class="term-con-list">
-										<li class="font-sm ">When traveling, keep a print out of your ticket.</li>
-										<li class="font-sm ">Please keep your id proof when traveling.</li>
-										<li class="font-sm ">Come to the bus counter 5 minutes before the bus leaves.</li>
-										<li class="font-sm ">A person cannot take more than 30 kg of luggage.</li>
-										<li class="font-sm ">To return the ticket, you must be informed at least 2 days in advance.</li>
+										<li class="font-sm ">Exija siempre su recibo de caja por cada pago que realice en efectivo por sus facturas a crédito.</li>
+                                        <li class="font-sm ">Este recibo de caja es el único comprobante valido de sus pagos en Efectivo y/o por Nequi.</li>
+                                        
+										
 									</ul>
 								</div>
 							</div>
 							<div class="invo-bill-total bus-invo-total  ">
 								<table class="invo-total-table">
 									<tbody>
-										<tr>
-											<td class="font-md color-light-black">Sub Total:</td>
-											<td class="font-md-grey color-grey text-right">$240.00</td>
-										</tr>
-										<tr class="tax-row bottom-border">
-											<td class="font-md color-light-black">Tax <span class="font-md color-grey">(18%)</span></td>
-											<td class="font-md-grey color-grey text-right">$43.20</td>
-										</tr>
+                                        
+                                        <tr>
+                                            <td class="font-md color-light-black">Retención:</td>
+                                            <td class="font-md-grey color-grey text-right">${{ $datos->retencion ? number_format($datos->retencion, 2) : '0.00' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-md color-light-black">Devolucion:</td>
+                                            <td class="font-md-grey color-grey text-right">${{ $datos->devolucion ? number_format($datos->devolucion, 2) : '0.00' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-md color-light-black">Descuentos:</td>
+                                            <td class="font-md-grey color-grey text-right">${{ $datos->descuento ? number_format($datos->descuento, 2) : '0.00' }}</td>
+                                        </tr>
+                                        
+										
 										<tr class="invo-grand-total">
-											<td class="font-18-700 color-pink pt-20">Grand Total:</td>
-											<td class="font-18-500 pt-20 color-light-black text-right">$283.20</td>
+											<td class="font-18-700 color-pink pt-20">Total Recibido:</td>
+											<td class="font-18-500 pt-20 color-light-black text-right">${{$datos->cobro_abono}}</td>
 										</tr>
 									</tbody>
 								</table>
