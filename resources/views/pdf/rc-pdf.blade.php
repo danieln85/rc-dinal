@@ -11,49 +11,6 @@
 	<link rel="stylesheet" href="assets/css/media-query.css">
 
     <style>
-        /*------------------------------------------------------------------
-Project:Digital Invoica
-Author: The_Krishna       
-Last change: 6 December, 2023  
-Primary use:  Invoice Generate
------------------------------------------------------------------- */
-
-/*-----------------------[Table of contents]------------------------
-1.Default CSS 
-2.Agency Invoice CSS
-3.Hotel Invoice CSS
-4.Bus Booking Invoice CSS
-5.Money Exchange Invoice CSS
-6.Car Invoice CSS
-7.Movie Booking Invoice CSS
-8.Stadium Booking Invoice CSS
-9.Internet Booking Invoice CSS
-10.Flight Booking Invoice CSS
-11.Train Booking Invoice CSS
-12.Ecommrece Invoice CSS
-13.Fitness Invoice CSS
-14.Hospital Invoice CSS
-15.Photostudio Invoice CSS
-16.Cleaning Invoice CSS
-17.Travel Invoice CSS
-18.Student Invoice CSS
-19.Coffee Invoice CSS
-
------------------------------------------------------------------- */
-/*------------------------ [Color codes] ------------------------
-
-Background: #F8F9FD, #FFFFFF 
-Content: #505050S, #12151C
-
-a (visited): #000000
-a (standard): #000000   
-a (hover):  #000000  
-a (active): #000000
-
------------------------------------------------------------------- */
-
-/************************* 1.Default CSS **************************/
-
 html {
 	scroll-behavior: smooth;
 	-webkit-text-size-adjust: 100%;
@@ -63,7 +20,7 @@ body {
 	width: auto;
 	height: 100%;
 	color: #ffffff;
-font-family: calibri;
+	font-family: 'Inter', sans-serif;
 	margin: 0;
 }
 body {
@@ -102,14 +59,14 @@ a:focus, a {
 }
 .font-sm{
 	color: #505050;
-font-family: calibri;
+	font-family: Inter;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 22px; 
 }
 .font-sm-700{
-font-family: calibri;
+	font-family: Inter;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 700;
@@ -117,14 +74,14 @@ font-family: calibri;
 }
 .font-sm-500{
 	color: #505050;
-font-family: calibri;
+	font-family: Inter;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 500;
 	line-height: 22px; 
 }
 .font-md{
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 700;
@@ -132,14 +89,14 @@ font-family: calibri;
 }
 .font-md-500{
 	color:#12151C;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 500;
 	line-height: 24px; 
 }
 .font-md-grey{
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -147,28 +104,28 @@ font-family: calibri;
 }
 .font-18{
 	color: #FFF;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 24px;
 }
 .font-18-700{
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 24px; 
 }
 .font-18-500{
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 500;
 	line-height: 24px;
 }
 .font-lg{
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 700;
@@ -270,7 +227,8 @@ font-family: calibri;
 
 /************************* 2.Header CSS **************************/
 .text-invoice {
-
+	background-image: url('../images/hotel/txt-img.png');
+	background-repeat: no-repeat;
 	width: 100%;
 	height: auto;
 	top: auto;
@@ -484,7 +442,7 @@ font-family: calibri;
 .invoice-txt {
 	color: #FFF;
 	text-align: right;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -533,7 +491,7 @@ font-family: calibri;
 	background-size: contain;
 }
 .invoice-logo-hotel-left{
-	background-image: url('https://rc.dinalpartes.com/images/pdf/rc-pdf/black-bg.svg')
+	background-image: url('https://rc.dinalpartes.com/images/pdf/rc-pdf/black-bg.svg');
 	background-repeat: no-repeat;
 	width: 60%;
 	height: auto;
@@ -786,7 +744,7 @@ table.invo-payment-table.invo-payment-table {
 }
 .bus-txt{
 	color: #12151C;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -820,7 +778,7 @@ table.invo-payment-table.invo-payment-table {
 .money-txt {
 	color: #12151C;
 	text-align: right;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -859,7 +817,7 @@ table.invo-payment-table.invo-payment-table {
 .car-txt {
 	color: #12151C;
 	text-align: right;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -925,7 +883,17 @@ table.invo-payment-table.invo-payment-table {
 	padding: 9px 10px;
 	background: #F5F5F5;
 }
-
+.car-header-img{
+	background-image: url(../images/car/car-header-img.png);
+	background-repeat: no-repeat;
+	padding: 30px 50px 0 50px;
+}
+.car-bottom-sec {
+	background-image: url(../images/car/car-footer-img.png);
+	background-repeat: no-repeat;
+	padding: 40px 50px 0;
+	background-position: bottom;
+}
 .car-invoice .invo-head-wrap{
 	justify-content: space-between;
 	padding-bottom: 0;
@@ -971,7 +939,7 @@ table.invo-payment-table.invo-payment-table {
 }
 .movie-txt {
 	color: #12151C;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -1044,7 +1012,7 @@ table.invo-payment-table.invo-payment-table {
 /************************* 8.Stadium Booking Invoice CSS **************************/
 .stadium-title-txt {
 	color: #FFF;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -1092,7 +1060,7 @@ table.invo-payment-table.invo-payment-table {
 }
 .book-txt {
 	color: #60A917;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 700;
@@ -1175,7 +1143,7 @@ table.invo-payment-table.invo-payment-table {
 /************************* 9.Internet Booking Invoice CSS **************************/
 .internet-txt {
 	color: #60A917;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 700;
@@ -1187,7 +1155,7 @@ table.invo-payment-table.invo-payment-table {
 }
 .internet-txt{
 	color: #60A917;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 700;
@@ -1348,7 +1316,7 @@ table.invo-payment-table.invo-payment-table {
 .flight-txt {
 	color: #12151C;
 	text-align: right;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -1378,7 +1346,7 @@ table.invo-payment-table.invo-payment-table {
 .train-txt {
 	color: #FFF;
 	text-align: center;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -1483,7 +1451,7 @@ table.invo-payment-table.invo-payment-table {
 }
 .ecommerce-txt {
 	color: #FFF;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -1614,7 +1582,7 @@ table.invo-payment-table.invo-payment-table {
 }
 .fitness-txt {
 	color: rgb(255 255 255 / 20%);
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -1660,7 +1628,7 @@ table.invo-payment-table.invo-payment-table {
 }
 .hospital-txt {
 	color: #12151C;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -1749,7 +1717,7 @@ table.invo-payment-table.invo-payment-table {
 .photo-txt {
 	color: #2E006F;
 	text-align: right;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 38px;
 	font-style: normal;
 	font-weight: 700;
@@ -1837,7 +1805,7 @@ table.invo-payment-table.invo-payment-table {
 /************************* 16.Cleaning Invoice CSS **************************/
 .cleaning-txt {
 	color: #00BAFF;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 700;
@@ -1934,7 +1902,7 @@ table.invo-payment-table.invo-payment-table {
 .travel-txt-bg {
 	color: rgb(18 21 28 / 20%);
 	text-align: center;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -2034,7 +2002,7 @@ table.invo-payment-table.invo-payment-table {
 /************************* 18.Student Invoice CSS **************************/
 .student-txt {
 	color: #FFF;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -2114,7 +2082,7 @@ table.invo-payment-table.invo-payment-table {
 }
 .coffee-txt {
 	color: #12151C;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -2333,7 +2301,7 @@ table.invo-payment-table.invo-payment-table {
 .domain-txt{
 	color: #FF3F34;
 	text-align: right;
-	font-family: calibri;
+	font-family: Inter;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
@@ -4037,6 +4005,7 @@ table.invo-payment-table.invo-payment-table {
 }
 
 
+
     </style>
 </head>
 <body>
@@ -4047,9 +4016,9 @@ table.invo-payment-table.invo-payment-table {
 				<!--Header start Here -->
 				<header class="bus-header " id="invo_header">
 					<div class="bus-header-img">
-						<img src="assets/images/bus/black-img1.svg" alt="background-img" class="wid-100">
-						<img src="assets/images/bus/pink-img.svg" alt="background-img" class="pink-img">
-						<img src="assets/images/bus/black-img2.svg" alt="background-img">
+						<img src="https://rc.dinalpartes.com/images/pdf/rc-pdf/black-img1.svg" alt="background-img" class="wid-100">
+						<img src="https://rc.dinalpartes.com/images/pdf/rc-pdf/pink-img.svg" alt="background-img" class="pink-img">
+						<img src="https://rc.dinalpartes.com/images/pdf/rc-pdf/black-img2.svg" alt="background-img">
 					</div>
 					<div class="container">
 						<div class="bus-header-logo res-contact">
@@ -4061,7 +4030,7 @@ table.invo-payment-table.invo-payment-table {
 											<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_6_94)"><path d="M5 4H9L11 9L8.5 10.5C9.57096 12.6715 11.3285 14.429 13.5 15.5L15 13L20 15V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21C14.0993 20.763 10.4202 19.1065 7.65683 16.3432C4.8935 13.5798 3.23705 9.90074 3 6C3 5.46957 3.21071 4.96086 3.58579 4.58579C3.96086 4.21071 4.46957 4 5 4" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 7C15.5304 7 16.0391 7.21071 16.4142 7.58579C16.7893 7.96086 17 8.46957 17 9" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 3C16.5913 3 18.1174 3.63214 19.2426 4.75736C20.3679 5.88258 21 7.4087 21 9" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clippath id="clip0_6_94"><rect width="24" height="24" fill="#E11D48"></rect></clippath></defs></svg>
 										</div>
 										<div class="invo-social-name">
-											<a href="tel:+12345678899" class="font-18 color-light-black">+1 234 567 8899</a>
+											<a href="tel:+12345678899" class="font-18 color-light-black">+57 315 4349929</a>
 										</div>
 									</div>
 									<div class="invo-cont-wrap pt-10">
@@ -4069,7 +4038,7 @@ table.invo-payment-table.invo-payment-table {
 											<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_6_108)"><path d="M19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 7L12 13L21 7" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clippath id="clip0_6_108"><rect width="24" height="24" fill="#E11D48"></rect></clippath></defs></svg>
 										</div>
 										<div class="invo-social-name">
-											<a href="mailto:contact@invoice.com" class="font-18 color-light-black">contact@invoice.com</a>
+											<a href="mailto:contact@invoice.com" class="font-18 color-light-black">cartera@dinalpartes.com</a>
 										</div>
 									</div>
 								</div>
@@ -4083,7 +4052,7 @@ table.invo-payment-table.invo-payment-table {
 									</div>
 									<div class="invo-head-wrap invoi-date-wrap invoi-date-wrap-agency">
 										<div class="color-light-black font-md wid-40 ">Invoice Date:</div>
-										<div class="font-md-grey color-grey wid-20 ">15/12/2024</div>
+										<div class="font-md-grey color-grey wid-20 ">{{$datos->date_cobro}}</div>
 									</div>
 								</div>
 							</div>
@@ -4098,9 +4067,10 @@ table.invo-payment-table.invo-payment-table {
 						<div class="invoice-owner-conte-wrap pt-40">
 							<div class="invo-to-wrap">
 								<div class="invoice-to-content">
-									<p class="font-md color-light-black">Passenger Info:</p>
-									<h2 class="font-lg color-pink pt-10">Jordon Smith</h2>
-									<p class="font-md-grey color-grey pt-10">Phone: +1 562 563 8899 <br> Email: jordon123@mail.com</p>
+                                    {{-- <h2 class="font-lg color-pink pt-10">Srs.</h2> --}}
+									<p class="font-md color-light-black">{{$datos->nombre_cliente}}</p>
+									
+									<p class="font-md-grey color-grey pt-2">Nit: {{$datos->nit}} <br> Email: {{$datos->email_cliente}}</p>
 								</div>
 							</div>
 							<div class="invo-pay-to-wrap">
