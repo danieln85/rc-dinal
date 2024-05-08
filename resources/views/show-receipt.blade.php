@@ -42,8 +42,7 @@
                         </div>
                     @endif
 
-                                <form method="POST" action="" class="needs-validation" id="invoice_form">
-                                    @csrf
+                                <form class="needs-validation mb-0" id="invoice_form">
                                     <div class="card-body border-bottom border-bottom-dashed p-4">
                                         <div class="row mb-3">
                                             <div class="col-md-2 mb-3">
@@ -148,21 +147,31 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="hstack gap-2 justify-content-end d-print-none mt-4">
-                                            {{-- <button type="submit" class="btn btn-info"><i class="ri-printer-line align-bottom me-1"></i> Save</button>
-                                            <a href="javascript:void(0);" class="btn btn-primary"><i class="ri-download-2-line align-bottom me-1"></i> Download Invoice</a>
-                                            <button type="submit" class="btn btn-danger"><i class="ri-send-plane-fill align-bottom me-1"></i> Crear y enviar</button> --}}
-                                            <div class="hstack gap-2 justify-content-end d-print-none mt-2">
-                                                {{-- <button type="submit" class="btn btn-info"><i class="ri-printer-line align-bottom me-1"></i> Save</button> --}}
-                                                <a href="{{ route('rc-pdf') }}" class="btn btn-primary"><i class="ri-download-2-line align-bottom me-1"></i> Descargar Recibo</a>
-                                                {{-- <button type="submit" class="btn btn-danger"><i class="ri-send-plane-fill align-bottom me-1"></i> Crear y enviar</button> --}}
-                                                <a href="javascript:history.back()" class="btn btn-warning"><i class="align-bottom me-1"></i> Regresar</a>
-                                            </div>
-
-
-                                        </div>
+                                        
                                     </div>
                                 </form>
+
+                                <div class="gap-2 justify-content-end d-print-none m-4">
+                                    {{-- <button type="submit" class="btn btn-info"><i class="ri-printer-line align-bottom me-1"></i> Save</button>
+                                    <a href="javascript:void(0);" class="btn btn-primary"><i class="ri-download-2-line align-bottom me-1"></i> Download Invoice</a>
+                                    <button type="submit" class="btn btn-danger"><i class="ri-send-plane-fill align-bottom me-1"></i> Crear y enviar</button> --}}
+                                    <div class="hstack gap-2 justify-content-end d-print-none ">
+                                        {{-- <button type="submit" class="btn btn-info"><i class="ri-printer-line align-bottom me-1"></i> Save</button> --}}
+                                        
+                                            <form method="POST" action="{{ route('rc-pdf') }}">
+                                                @csrf
+                                                <input type="hidden" name="id_recibo" value="{{ $recibo->id }}">
+                                                <button class="btn btn-primary" type="submit">
+                                                    <i class="ri-download-2-line align-bottom me-1"></i> Descargar
+                                                </button>
+                                            </form>
+                                        
+
+                                        <a href="javascript:history.back()" class="btn btn-warning"><i class="align-bottom me-1"></i> Regresar</a>
+                                    </div>
+
+
+                                </div>
                             </div>
                         </div>
                     </div>

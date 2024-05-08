@@ -247,8 +247,13 @@
                                                                     </form>
                                                                 </li>
                                                                 <li>
-                                                                    <a class="dropdown-item" href="{{ route('rc-pdf') }}"><i class="las la-file-download fs-18 align-middle me-2 text-muted"></i>
-                                                                        Download</a>
+                                                                    <form method="POST" action="{{ route('rc-pdf') }}">
+                                                                        @csrf
+                                                                        <input type="hidden" name="id_recibo" value="{{ $ultimoCobro->id }}">
+                                                                        <button type="submit">
+                                                                            <i class="ri-download-2-line align-bottom me-1"></i> Descargar
+                                                                        </button>
+                                                                    </form>
                                                                 </li>
                                                                 {{-- <li>
                                                                     <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>

@@ -46,8 +46,7 @@ Route::middleware([
 
 
     Route::get('rc-pdf', [PdfController::class, 'rcPdf'])->name('rc-pdf');
-
-    
+    Route::post('rc-pdf', [PdfController::class, 'rcPdf'])->name('rc-pdf');
 
 
 });

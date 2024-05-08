@@ -515,7 +515,7 @@ font-family: calibri;
 
 /************************* 3.Hotel Invoice CSS **************************/
 .invoice-logo-hotel {
-	background-image: url(../images/hotel/blue-bg.svg);
+	background-image: url('https://rc.dinalpartes.com/images/pdf/rc-pdf/blue-bg.svg');
 	background-repeat: no-repeat;
 	width: 40%;
 	height: auto;
@@ -4054,7 +4054,7 @@ table.invo-payment-table.invo-payment-table {
 					<div class="container">
 						<div class="bus-header-logo res-contact">
 							<div class="wid-50">
-								<a href="bus_booking.html" class="logo"><img src="https://rc.dinalpartes.com/images/logo/logo-dinalpartes.png" width="100px" alt="this is a invoice logo"></a>
+								<a href="bus_booking.html" class="logo"><img src="https://rc.dinalpartes.com/images/logo/logo-dinalpartes.png" width="200px" alt="this is a invoice logo"></a>
 								<div class="pt-20">
 									<div class="invo-cont-wrap invo-contact-wrap">
 										<div class="invo-social-icon">
@@ -4075,11 +4075,11 @@ table.invo-payment-table.invo-payment-table {
 								</div>
 							</div>
 							<div class="wid-50">
-								<h1 class="bus-txt">INVOICE</h1>
+								<h1 class="bus-txt">RECIBO DE CAJA</h1>
 								<div class="invoice-agency-details">
 									<div class="invo-head-wrap">
-										<div class="color-light-black font-md wid-40 ">Invoice No:</div>
-										<div class="font-md-grey color-grey wid-20">#DI56789</div>
+										<div class="color-light-black font-md wid-40 ">RC No:</div>
+										<div class="font-md-grey color-grey wid-20">{{$datos->id}}</div>
 									</div>
 									<div class="invo-head-wrap invoi-date-wrap invoi-date-wrap-agency">
 										<div class="color-light-black font-md wid-40 ">Invoice Date:</div>
