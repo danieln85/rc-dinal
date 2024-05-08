@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CashReceiptController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\PdfController;
 
 
 
@@ -44,7 +45,7 @@ Route::middleware([
     Route::get('cliente/{cliente}/edit', [ClientController::class, 'edit'])->name('client.edit');
 
 
-
+    Route::get('rc-pdf', [PdfController::class, 'rcPdf'])->name('rc-pdf');
 
     
 
