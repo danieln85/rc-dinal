@@ -37,9 +37,9 @@
             margin-top: 30px;
             font-size: 12px;
         }
-		h4 {
-            text-align: left; /* Alinea el texto a la izquierda */
-            margin-top: 0;   /* Elimina el margen superior si no lo necesitas */
+		h2 {
+            text-align: left;
+            margin-top: 0; 
             
         }
 		
@@ -49,13 +49,13 @@
     <div class="header">
         <img src="https://rc.dinalpartes.com/images/logo/logo-dinalpartes.png" alt="Logo-Dinalpartes" class="logo">
         <h1>Recibo de Caja</h1>
-		<h4>RC No. {{ $datos->numero_rc }}</h4>
+		<h2>RC No. {{ $datos->numero_rc }}</h2>
     </div>
     <div class="content">
         <table>
 			<tr>
                 <th>Fecha</th>
-                <td>{{$datos->date_cobro}}</td>
+                <td>{{ $datos->date_cobro }}</td>
             </tr>
 			<tr>
                 <th>NIT</th>
@@ -67,7 +67,7 @@
             </tr>
 			<tr>
                 <th>No Factura</th>
-                <td>">{{ $datos->num_factura }}</td>
+                <td>{{ $datos->num_factura }}</td>
             </tr>
 			<tr>
                 <th>Valor Recibido</th>
@@ -92,24 +92,29 @@
             </tr>
 			<tr>
                 <th>Devolución</th>
-                <td>">${{ $datos->devolucion ? $datos->devolucion : '0.00' }}</td>
+                <td>${{ $datos->devolucion ? $datos->devolucion : '0.00' }}</td>
             </tr>
 			<tr>
                 <th>Descuentos</th>
-                <td>">${{ $datos->descuento ? $datos->descuento : '0.00' }}</td>
+                <td>${{ $datos->descuento ? $datos->descuento : '0.00' }}</td>
             </tr>
 			<tr>
                 <th>Observaciones</th>
-                <td>{{$datos->informacion }}</td>
+                <td>{{ $datos->informacion }}</td>
             </tr>
 			<tr>
                 <th>Cobrado por</th>
-                <td>{{$datos->cobrado_por}}</td>
+                <td>{{ $datos->cobrado_por }}</td>
             </tr>
         </table>
     </div>
     <div class="footer">
-		<h5>Este recibo de caja se envía tan pronto realices el pago en efectivo de una factura de venta a crédito.</h5>
+				<p><ul>
+					<li>Exige siempre tu recibo de caja por cada pago que realices en efectivo por tus facturas a crédito.</li>
+					<li>Este recibo de caja es el único comprobante valido de sus pagos en Efectivo y/o por Nequi.</li>
+					</ul>
+				</p>
+		<h4>Este recibo de caja es generado una vez realices el pago en efectivo de una factura de venta a crédito.</h4>
         <p>Gracias por preferirnos, visítanos en <a href="https://www.dinalpartes.com">www.dinalpartes.com</a></p>
     </div>
 </body>
