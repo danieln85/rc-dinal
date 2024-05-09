@@ -45,7 +45,7 @@ Route::middleware([
     Route::get('cliente/{cliente}/edit', [ClientController::class, 'edit'])->name('client.edit');
 
 
-    Route::get('rc-pdf', [PdfController::class, 'rcPdf'])->name('rc-pdf');
+    Route::get('download-rc-pdf', [PdfController::class, 'rcPdf'])->name('download-rc-pdf');
     Route::post('rc-pdf', [PdfController::class, 'rcPdf'])->name('rc-pdf');
 
 

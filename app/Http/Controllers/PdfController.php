@@ -11,9 +11,9 @@ class PdfController extends Controller
     public function rcPdf(Request $request){
         $id = $request->id_recibo;
         // Obtener los datos del modelo
-        $datos = CobroFac::findOrFail($id);
+        $datos = CobroFac::find($id);
 
-        $pdf = Pdf::loadView('pdf.rc-pdf', ['datos' => $datos]);
+        $pdf = Pdf::loadView('pdf.download-rc-pdf', ['datos' => $datos]);
         return $pdf->download('recibo-de-caja.pdf');
         // return view('pdf.rc-pdf', ['datos' => $datos]);
     }
