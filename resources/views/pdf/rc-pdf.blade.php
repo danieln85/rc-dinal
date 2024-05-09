@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>DINALPARTES - RC PDF</title>
-	{{-- <link href="assets/images/favicon/icon.png" rel="icon"> --}}
+	
 
     <style>
 html {
@@ -4170,7 +4170,7 @@ table.invo-payment-table.invo-payment-table {
 						</div>
 						<!--Invoice table data end here -->
 						<div class="res-contact res-bottom">
-							<p class="font-sm color-light-black text-center">Gracias por preferirnos 🙂</p>
+							<p class="font-sm color-light-black text-center">Gracias por preferirnos</p>
 						</div>
 					</div>
 				</section>
