@@ -14,7 +14,8 @@
             margin-bottom: 20px;
         }
         .logo {
-            width: 100px;
+            width: 80px;
+			height: 30px;
         }
         .content {
             margin-top: 20px;
@@ -40,7 +41,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="https://rc.dinalpartes.com/logo/logo-dinalpartes.png" alt="Logo" class="logo">
+        <img src="https://rc.dinalpartes.com/images/logo/logo-dinalpartes.png" alt="Logo" class="logo">
         <h1>Recibo de Caja</h1>
     </div>
     <div class="content">
