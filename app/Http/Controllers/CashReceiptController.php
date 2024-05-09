@@ -53,62 +53,62 @@ class CashReceiptController extends Controller
      */
 
      public function store(CashReceiptRequest $request)
-     {
-         // Iniciar una transacción para asegurar la consistencia de los datos
-         DB::beginTransaction();
-     
-         try {
-             // Obtener el número de recibo más alto de la base de datos
-             $ultimoRc = CobroFac::max('numero_rc');
-             
-             // Incrementar el número de recibo en 1 para obtener el siguiente número consecutivo
-             $numeroConsecutivo = $ultimoRc + 1;
-     
-             // Crear una nueva instancia del modelo CobroFac
-             $cobroFac = new CobroFac();
-     
-             $cobroFac->date_cobro = Carbon::parse($request->date_cobro)->format('Y-m-d');
+{
+    // Iniciar una transacción para asegurar la consistencia de los datos
+    DB::beginTransaction();
 
-    
-    $cobroFac->num_factura = $request->input('num_factura');
-    $cobroFac->nombre_cliente = $request->input('nombre_cliente');
-    $cobroFac->email_cliente = $request->input('email_cliente');
-    $cobroFac->nit = $request->input('nit');
-    $cobroFac->cobro_abono = $request->input('cobro_abono');
-    $cobroFac->abono = $request->input('abono');
-    $cobroFac->descuento = $request->input('descuento');
-    $cobroFac->retencion = $request->input('retencion');
-    $cobroFac->devolucion = $request->input('devolucion');
-    $cobroFac->metodo_pago = $request->input('metodo_pago');
-    $cobroFac->informacion = $request->input('informacion');
-    $cobroFac->estado_rc = 'activo';
-    $cobroFac->estado_dinero = 'pendiente';
-    $cobroFac->cobrado_por = $request->input('cobrado_por');
-     
-             // Asignar el número de recibo consecutivo
-             $cobroFac->numero_rc = $numeroConsecutivo;
-     
-             // Guardar el modelo en la base de datos
-             $cobroFac->save();
-     
-             // Confirmar la transacción si todo ha ido bien
-             DB::commit();
-     
-             session()->flash('success', '¡El Recibo de caja se creó exitosamente!');
-     
-             // Redireccionar a una ruta después de guardar los datos
-             return redirect()->route('cash-receipts');
-         } catch (\Exception $e) {
-             // En caso de error, revertir la transacción para evitar inconsistencias en los datos
-             DB::rollBack();
-     
-             // Manejar el error (por ejemplo, mostrar un mensaje de error al usuario)
-             session()->flash('error', 'Ha ocurrido un error al crear el Recibo de caja.');
-     
-             // Redireccionar a una ruta de error
-             return redirect()->route('cash-receipts');
-         }
-     }
+    try {
+        // Obtener el número de recibo más alto de la base de datos
+        $ultimoRc = CobroFac::max('numero_rc');
+        
+        // Incrementar el número de recibo en 1 para obtener el siguiente número consecutivo
+        $numeroConsecutivo = $ultimoRc + 1;
+
+        // Crear una nueva instancia del modelo CobroFac
+        $cobroFac = new CobroFac();
+
+        $cobroFac->date_cobro = Carbon::parse($request->date_cobro)->format('Y-m-d');
+
+        $cobroFac->num_factura = $request->input('num_factura');
+        $cobroFac->nombre_cliente = $request->input('nombre_cliente');
+        $cobroFac->email_cliente = $request->input('email_cliente');
+        $cobroFac->nit = $request->input('nit');
+        $cobroFac->cobro_abono = $request->input('cobro_abono');
+        $cobroFac->abono = $request->input('abono');
+        $cobroFac->descuento = $request->input('descuento');
+        $cobroFac->retencion = $request->input('retencion');
+        $cobroFac->devolucion = $request->input('devolucion');
+        $cobroFac->metodo_pago = $request->input('metodo_pago');
+        $cobroFac->informacion = $request->input('informacion');
+        $cobroFac->estado_rc = 'activo';
+        $cobroFac->estado_dinero = auth()->user()->hasRole('supervisor') ? 'recibido' : 'pendiente';
+        $cobroFac->cobrado_por = $request->input('cobrado_por');
+        
+        // Asignar el número de recibo consecutivo
+        $cobroFac->numero_rc = $numeroConsecutivo;
+
+        // Guardar el modelo en la base de datos
+        $cobroFac->save();
+
+        // Confirmar la transacción si todo ha ido bien
+        DB::commit();
+
+        session()->flash('success', '¡El Recibo de caja se creó exitosamente!');
+
+        // Redireccionar a una ruta después de guardar los datos
+        return redirect()->route('cash-receipts');
+    } catch (\Exception $e) {
+        // En caso de error, revertir la transacción para evitar inconsistencias en los datos
+        DB::rollBack();
+
+        // Manejar el error (por ejemplo, mostrar un mensaje de error al usuario)
+        session()->flash('error', 'Ha ocurrido un error al crear el Recibo de caja.');
+
+        // Redireccionar a una ruta de error
+        return redirect()->route('cash-receipts');
+    }
+}
+
     /**
      * Display the specified resource.
      */
