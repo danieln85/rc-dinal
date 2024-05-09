@@ -140,6 +140,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <input type="hidden" id="nit" name="nit" value="{{ $seleccionado->nit}}">
                                         <div class="hstack gap-2 justify-content-end d-print-none mt-4">
                                             {{-- <button type="submit" class="btn btn-info"><i class="ri-printer-line align-bottom me-1"></i> Save</button>
                                             <a href="javascript:void(0);" class="btn btn-primary"><i class="ri-download-2-line align-bottom me-1"></i> Download Invoice</a> --}}

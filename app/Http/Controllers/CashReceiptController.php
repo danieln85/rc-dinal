@@ -73,6 +73,7 @@ class CashReceiptController extends Controller
     $cobroFac->num_factura = $request->input('num_factura');
     $cobroFac->nombre_cliente = $request->input('nombre_cliente');
     $cobroFac->email_cliente = $request->input('email_cliente');
+    $cobroFac->nit = $request->input('nit');
     $cobroFac->cobro_abono = $request->input('cobro_abono');
     $cobroFac->abono = $request->input('abono');
     $cobroFac->descuento = $request->input('descuento');

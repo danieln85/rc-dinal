@@ -14,8 +14,8 @@
             margin-bottom: 20px;
         }
         .logo {
-            width: 160px;
-			height: 60px;
+            width: 200px;
+			height: 70px;
         }
         .content {
             margin-top: 20px;
@@ -49,7 +49,7 @@
     <div class="header">
         <img src="https://rc.dinalpartes.com/images/logo/logo-dinalpartes.png" alt="Logo-Dinalpartes" class="logo">
         <h1>Recibo de Caja</h1>
-		<h2>RC No. {{ $datos->numero_rc }}</h2>
+		<h2>No. {{ $datos->numero_rc }}</h2>
     </div>
     <div class="content">
         <table>
@@ -111,7 +111,7 @@
     <div class="footer">
 				<p><ul>
 					<li>Exige siempre tu recibo de caja por cada pago que realices en efectivo por tus facturas a crédito.</li>
-					<li>Este recibo de caja es el único comprobante valido de sus pagos en Efectivo y/o por Nequi.</li>
+					<li>Este recibo de caja es el único comprobante valido de tus pagos en Efectivo y/o por Nequi.</li>
 					</ul>
 				</p>
 		<h4>Este recibo de caja es generado una vez realices el pago en efectivo de una factura de venta a crédito.</h4>

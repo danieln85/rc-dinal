@@ -13,7 +13,7 @@ class PdfController extends Controller
         // Obtener los datos del modelo
         $datos = CobroFac::find($id);
 
-        $pdf = Pdf::setOption(['defaultPaperSize' => 'letter', 'defaultFont' => 'arial'])->loadView('pdf.rc-pdf', ['datos' => $datos]);
+        $pdf = Pdf::setOption(['defaultPaperSize' => 'letter', 'defaultFont' => 'calibri'])->loadView('pdf.rc-pdf', ['datos' => $datos]);
         return $pdf->download('recibo-de-caja.pdf');
         // return view('pdf.rc-pdf', ['datos' => $datos]);
     }
