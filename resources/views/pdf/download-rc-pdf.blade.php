@@ -6,9 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>DINALPARTES - RC PDF</title>
 	{{-- <link href="assets/images/favicon/icon.png" rel="icon"> --}}
-	<link href="../../../css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/custom.css">
-	<link rel="stylesheet" href="assets/css/media-query.css">
 
     <style>
 html {
@@ -227,7 +224,7 @@ a:focus, a {
 
 /************************* 2.Header CSS **************************/
 .text-invoice {
-	/* background-image: url('../images/hotel/txt-img.png'); */
+	background-image: url('../images/hotel/txt-img.png');
 	background-repeat: no-repeat;
 	width: 100%;
 	height: auto;
@@ -473,7 +470,7 @@ a:focus, a {
 
 /************************* 3.Hotel Invoice CSS **************************/
 .invoice-logo-hotel {
-	/* background-image: url('https://rc.dinalpartes.com/images/pdf/rc-pdf/blue-bg.svg'); */
+	background-image: url('https://rc.dinalpartes.com/images/pdf/rc-pdf/blue-bg.svg');
 	background-repeat: no-repeat;
 	width: 40%;
 	height: auto;
@@ -481,7 +478,7 @@ a:focus, a {
 	padding: 30px 50px;
 }
 .pink-bg{
-	/* background-image: url('https://rc.dinalpartes.com/images/pdf/rc-pdf/pink-bg.png'); */
+	background-image: url('https://rc.dinalpartes.com/images/pdf/rc-pdf/pink-bg.png');
 	background-repeat: no-repeat;
 	width: 100%;
 	height: auto;
@@ -491,7 +488,7 @@ a:focus, a {
 	background-size: contain;
 }
 .invoice-logo-hotel-left{
-	/* background-image: url('https://rc.dinalpartes.com/images/pdf/rc-pdf/black-bg.svg'); */
+	background-image: url('https://rc.dinalpartes.com/images/pdf/rc-pdf/black-bg.svg');
 	background-repeat: no-repeat;
 	width: 60%;
 	height: auto;
@@ -884,12 +881,12 @@ table.invo-payment-table.invo-payment-table {
 	background: #F5F5F5;
 }
 .car-header-img{
-	/* background-image: url(../images/car/car-header-img.png); */
+	background-image: url(../images/car/car-header-img.png);
 	background-repeat: no-repeat;
 	padding: 30px 50px 0 50px;
 }
 .car-bottom-sec {
-	/* background-image: url(../images/car/car-footer-img.png); */
+	background-image: url(../images/car/car-footer-img.png);
 	background-repeat: no-repeat;
 	padding: 40px 50px 0;
 	background-position: bottom;
