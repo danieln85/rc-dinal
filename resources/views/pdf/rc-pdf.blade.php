@@ -14,8 +14,8 @@
             margin-bottom: 20px;
         }
         .logo {
-            width: 80px;
-			height: 30px;
+            width: 160px;
+			height: 60px;
         }
         .content {
             margin-top: 20px;
