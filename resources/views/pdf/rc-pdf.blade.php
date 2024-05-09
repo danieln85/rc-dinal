@@ -37,37 +37,80 @@
             margin-top: 30px;
             font-size: 12px;
         }
+		h4 {
+            text-align: left; /* Alinea el texto a la izquierda */
+            margin-top: 0;   /* Elimina el margen superior si no lo necesitas */
+            
+        }
+		
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="https://rc.dinalpartes.com/images/logo/logo-dinalpartes.png" alt="Logo" class="logo">
+        <img src="https://rc.dinalpartes.com/images/logo/logo-dinalpartes.png" alt="Logo-Dinalpartes" class="logo">
         <h1>Recibo de Caja</h1>
+		<h4>RC No. {{ $datos->numero_rc }}</h4>
     </div>
     <div class="content">
         <table>
-            <tr>
-                <th>Descripción</th>
-                <td>Abono de servicio</td>
-            </tr>
-            <tr>
-                <th>{{ $datos->informacion }}</th>
-                <td>${{$datos->cobro_abono}}
-</td>
-            </tr>
-            <tr>
+			<tr>
                 <th>Fecha</th>
                 <td>{{$datos->date_cobro}}</td>
             </tr>
+			<tr>
+                <th>NIT</th>
+                <td>{{ $datos->nit }}</td>
+            </tr>
+			<tr>
+                <th>Cliente</th>
+                <td>{{ $datos->nombre_cliente }}</td>
+            </tr>
+			<tr>
+                <th>No Factura</th>
+                <td>">{{ $datos->num_factura }}</td>
+            </tr>
+			<tr>
+                <th>Valor Recibido</th>
+                <td>${{ $datos->cobro_abono }}</td>
+            </tr>
+			<tr>
+                <th>Método de pago</th>
+                <td>{{ ucfirst(trim($datos->metodo_pago, ',')) }}</td>
+            </tr>
             <tr>
-                <th>Recibido por</th>
-                <td>{{$datos->cobrado_por}}
+                <th>Abono</th>
+                <td>@if($datos->abono == '')
+					N/A
+					@else
+					{{ $datos->abono }}
+					@endif
 </td>
+            </tr>
+			<tr>
+                <th>Retención</th>
+                <td>${{ $datos->retencion ? $datos->retencion : '0.00' }}</td>
+            </tr>
+			<tr>
+                <th>Devolución</th>
+                <td>">${{ $datos->devolucion ? $datos->devolucion : '0.00' }}</td>
+            </tr>
+			<tr>
+                <th>Descuentos</th>
+                <td>">${{ $datos->descuento ? $datos->descuento : '0.00' }}</td>
+            </tr>
+			<tr>
+                <th>Observaciones</th>
+                <td>{{$datos->informacion }}</td>
+            </tr>
+			<tr>
+                <th>Cobrado por</th>
+                <td>{{$datos->cobrado_por}}</td>
             </tr>
         </table>
     </div>
     <div class="footer">
-        <p>Gracias por su pago</p>
+		<h5>Este recibo de caja se envía tan pronto realices el pago en efectivo de una factura de venta a crédito.</h5>
+        <p>Gracias por preferirnos, visítanos en <a href="https://www.dinalpartes.com">www.dinalpartes.com</a></p>
     </div>
 </body>
 </html>
