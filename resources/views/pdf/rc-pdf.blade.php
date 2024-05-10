@@ -9,7 +9,7 @@
             font-family: 'Calibri', sans-serif;
             margin: 20px;
             font-size: 16px;
-            color: #333;
+            color: #ab0202;
             background-color: #f7f7f7;
         }
 
@@ -92,7 +92,7 @@
         }
 
         .mt-2{
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .text-start {

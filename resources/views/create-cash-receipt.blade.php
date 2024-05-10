@@ -79,13 +79,13 @@
                                             <div class="col-md-2 col-sm-4">
                                                 <div class="form-group">
                                                     <label for="num_factura">No Factura</label>
-                                                    <input type="text" class="form-control" id="num_factura" name="num_factura">
+                                                    <input type="text" class="form-control" id="num_factura" name="num_factura" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-2 col-sm-6">
                                                 <div class="form-group">
                                                     <label for="cobro_abono">Valor pago</label>
-                                                    <input type="text" class="form-control" id="cobro_abono" name="cobro_abono">
+                                                    <input type="text" class="form-control" id="cobro_abono" name="cobro_abono" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-2 col-sm-2">
@@ -141,6 +141,23 @@
                                             </div>
                                         </div>
                                         <input type="hidden" id="nit" name="nit" value="{{ $seleccionado->nit}}">
+
+                                        @php
+                                            $user = auth()->user(); // Obtenemos el usuario autenticado
+                                            $estadoDinero = 'pendiente'; // Valor por defecto
+
+                                            if ($user) {
+                                                if ($user->role == 'supervisor') {
+                                                    $estadoDinero = 'recibido';
+                                                } elseif ($user->role == 'admin') {
+                                                    $estadoDinero = 'contabilizado';
+                                                }
+                                            }
+                                        @endphp
+
+<input type="hidden" id="estado_dinero" name="estado_dinero" value="{{ $estadoDinero }}">
+
+                                    
                                         <div class="hstack gap-2 justify-content-end d-print-none mt-4">
                                             {{-- <button type="submit" class="btn btn-info"><i class="ri-printer-line align-bottom me-1"></i> Save</button>
                                             <a href="javascript:void(0);" class="btn btn-primary"><i class="ri-download-2-line align-bottom me-1"></i> Download Invoice</a> --}}

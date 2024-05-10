@@ -19,7 +19,7 @@
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Inicio</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Inicio</a></li>
                                         <li class="breadcrumb-item active">Recibos de caja</li>
                                     </ol>
                                 </div>
@@ -191,10 +191,10 @@
                                                     <th scope="col" style="width: 20%;">CLIENTE</th>
                                                     {{-- <th scope="col" style="width: 20%;">CORREO</th> --}}
                                                     <th scope="col">FACTURA</th>
-                                                    <th scope="col">COBRO</th>
+                                                    <th scope="col">VALOR</th>
                                                     {{-- <th scope="col">ABONO</th> --}}
                                                     <th scope="col">COBRÓ</th>
-                                                    <th scope="col" class="text-center">$$$</th>
+                                                    <th scope="col">DINERO</th>
                                                     <th scope="col">ESTADO</th>
                                                     <th scope="col" style="width: 12%;">Action</th>
                                                 </tr>
@@ -212,7 +212,7 @@
                                                     <td>{{ $ultimoCobro->date_cobro }}</td>
                                                     <td><p class="fw-medium mb-0">{{ $ultimoCobro->numero_rc }}</p></td>
                                                     <td>
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">{{ Illuminate\Support\Str::limit($ultimoCobro->nombre_cliente, 20) }}</a>
+                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">{{ Illuminate\Support\Str::limit($ultimoCobro->nombre_cliente, 25) }}</a>
                                                     </td>
                                                     {{-- <td>{{ Illuminate\Support\Str::limit($ultimoCobro->email_cliente, 15) }}</td> --}}
 
@@ -225,7 +225,7 @@
                                                         <span class="badge 
                                                             @if($ultimoCobro->estado_dinero == 'recibido') bg-success text-white
                                                             @elseif($ultimoCobro->estado_dinero == 'pendiente') bg-warning text-white
-                                                            @elseif($ultimoCobro->estado_dinero == 'admin') bg-danger text-white
+                                                            @elseif($ultimoCobro->estado_dinero == 'contabilizado') bg-danger text-white
                                                             @endif
                                                             p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
                                                     </td>
@@ -250,7 +250,7 @@
                                                                     <form method="POST" action="{{ route('rc-pdf') }}">
                                                                         @csrf
                                                                         <input type="hidden" name="id_recibo" value="{{ $ultimoCobro->id }}">
-                                                                        <button type="submit">
+                                                                        <button class="btn btn-link text-decoration-none" style="cursor: pointer;" type="submit">
                                                                             <i class="ri-download-2-line align-bottom me-1"></i> Descargar
                                                                         </button>
                                                                     </form>

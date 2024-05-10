@@ -28,6 +28,7 @@ class CashReceiptRequest extends FormRequest
         'nombre_cliente' => 'required|string',
         'email_cliente' => 'required|email',
         'cobro_abono' => 'required|string',
+        'nit' => 'required|string',
         'abono' => 'nullable|string',
         'descuento' => 'nullable|string',
         'retencion' => 'nullable|string',

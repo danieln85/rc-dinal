@@ -65,7 +65,7 @@
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <label for="nombre_cliente">Nombre del Cliente</label>
-                                                    <input class="form-control" id="nombre_cliente" name="nombre_cliente">
+                                                    <input class="form-control" id="nombre_cliente" name="nombre_cliente" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -73,13 +73,13 @@
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="email_cliente">Correo Electrónico</label>
-                                                    <input type="email" class="form-control" id="email_cliente" name="email_cliente">
+                                                    <input type="email" class="form-control" id="email_cliente" name="email_cliente" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3 col-sm-4">
                                                 <div class="form-group">
                                                     <label for="nit">Nit</label>
-                                                    <input type="text" class="form-control" id="ni" name="nit">
+                                                    <input type="text" class="form-control" id="ni" name="nit" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3 col-sm-6">

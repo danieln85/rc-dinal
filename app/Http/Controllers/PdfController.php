@@ -10,11 +10,18 @@ class PdfController extends Controller
 {
     public function rcPdf(Request $request){
         $id = $request->id_recibo;
+        
         // Obtener los datos del modelo
         $datos = CobroFac::find($id);
 
-        $pdf = Pdf::setOption(['defaultPaperSize' => 'letter', 'defaultFont' => 'calibri'])->loadView('pdf.rc-pdf', ['datos' => $datos]);
-        return $pdf->download('recibo-de-caja.pdf');
-        // return view('pdf.rc-pdf', ['datos' => $datos]);
+        // Nombre del archivo de descarga
+        $nombreArchivo = 'rc-' . $datos->numero_rc . '.pdf';
+
+        // Generar el PDF
+        $pdf = Pdf::setOption(['defaultPaperSize' => 'letter', 'defaultFont' => 'calibri'])
+                  ->loadView('pdf.rc-pdf', ['datos' => $datos]);
+
+        // Descargar el PDF con el nombre personalizado
+        return $pdf->download($nombreArchivo);
     }
 }
