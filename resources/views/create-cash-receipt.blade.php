@@ -150,12 +150,12 @@
                                                 if ($user->role == 'supervisor') {
                                                     $estadoDinero = 'recibido';
                                                 } elseif ($user->role == 'admin') {
-                                                    $estadoDinero = 'contabilizado';
+                                                    $estadoDinero = 'recaudado';
                                                 }
                                             }
                                         @endphp
 
-<input type="hidden" id="estado_dinero" name="estado_dinero" value="{{ $estadoDinero }}">
+                                        <input type="hidden" id="estado_dinero" name="estado_dinero" value="{{ $estadoDinero }}">
 
                                     
                                         <div class="hstack gap-2 justify-content-end d-print-none mt-4">

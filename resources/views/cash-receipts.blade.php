@@ -224,8 +224,8 @@
                                                     <td>
                                                         <span class="badge 
                                                             @if($ultimoCobro->estado_dinero == 'recibido') bg-success text-white
-                                                            @elseif($ultimoCobro->estado_dinero == 'pendiente') bg-warning text-white
-                                                            @elseif($ultimoCobro->estado_dinero == 'contabilizado') bg-danger text-white
+                                                            @elseif($ultimoCobro->estado_dinero == 'pendiente') bg-danger text-white
+                                                            @elseif($ultimoCobro->estado_dinero == 'recaudado') bg-warning text-white
                                                             @endif
                                                             p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
                                                     </td>

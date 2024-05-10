@@ -9,7 +9,7 @@
             font-family: 'Calibri', sans-serif;
             margin: 20px;
             font-size: 16px;
-            color: #ab0202;
+            color: #060000;
             background-color: #f7f7f7;
         }
 
