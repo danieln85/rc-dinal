@@ -33,6 +33,28 @@ class CashReceiptController extends Controller
     }
 
 
+/* Funcion estadoCobro*/
+    public function estadoCobro(Request $request)
+    {
+        // Asumiendo que recibes un identificador del cobro, ajusta según tus necesidades
+        $cobroId = $request->cobro_id; // Necesitarás enviar esto desde el formulario si es necesario
+        
+
+        // Encuentra el Cobro basado en el ID proporcionado
+        $cobro = CobroFac::findOrFail($cobroId);
+
+        $cobro->estado_dinero = $request->estado_dinero;
+ 
+
+        // Guarda los cambios en el modelo
+        $cobro->save();
+
+        // Redirige a donde necesites después de realizar las operaciones
+        return redirect()->back()->with('status', 'Estado del cobro actualizado correctamente!');
+    }
+
+
+/* Funcion selectedClient*/
     public function selectedClient(Request $request)
     {
         $ultimoRc = CobroFac::max('numero_rc');

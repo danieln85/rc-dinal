@@ -221,14 +221,50 @@
                                                     <td>{{ $ultimoCobro->cobro_abono }}</td>
                                                     {{-- <td class="text-center">{{ $ultimoCobro->abono }}</td> --}}
                                                     <td>{{ $ultimoCobro->cobrado_por }}</td>
+
+                                                    
                                                     <td>
-                                                        <span class="badge 
-                                                            @if($ultimoCobro->estado_dinero == 'recibido') bg-success text-white
-                                                            @elseif($ultimoCobro->estado_dinero == 'pendiente') bg-danger text-white
-                                                            @elseif($ultimoCobro->estado_dinero == 'recaudado') bg-warning text-white
+                                                        @if (auth()->check() && auth()->user()->role == 'usuario')
+                                                            <span class="badge 
+                                                                @if($ultimoCobro->estado_dinero == 'recibido') bg-success text-white
+                                                                @elseif($ultimoCobro->estado_dinero == 'pendiente') bg-danger text-white
+                                                                @elseif($ultimoCobro->estado_dinero == 'recaudado') bg-warning text-white
+                                                                @endif
+                                                                p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
+                                                        @elseif (auth()->check() && auth()->user()->role == 'supervisor')
+                                                            @if($ultimoCobro->estado_dinero == 'recibido')
+                                                                <span class="badge bg-success text-white p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
+                                                            @elseif($ultimoCobro->estado_dinero == 'pendiente')
+                                                                <form action="{{ route('estado-cobro') }}" method="POST">
+                                                                    @csrf
+                                                                    <button type="submit" class="btn btn-danger btn-sm"> <!-- Ajuste del tamaño aquí -->
+                                                                        {{ strtoupper($ultimoCobro->estado_dinero) }}
+                                                                    </button>
+                                                                    <input type="hidden" name="cobro_id" value="{{ $ultimoCobro->id }}">
+                                                                    <input type="hidden" name="estado_dinero" value="recibido">
+                                                                </form>
+                                                            @else
+                                                                <span class="badge bg-warning text-white p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
                                                             @endif
-                                                            p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
+                                                        @elseif (auth()->check() && auth()->user()->role == 'admin')
+                                                            <form action="{{ route('estado-cobro') }}" method="POST">
+                                                                @csrf
+                                                                <button type="submit" class="btn 
+                                                                    @if($ultimoCobro->estado_dinero == 'recibido') btn-success
+                                                                    @elseif($ultimoCobro->estado_dinero == 'pendiente') btn-danger
+                                                                    @elseif($ultimoCobro->estado_dinero == 'recaudado') btn-warning
+                                                                    @endif">
+                                                                    {{ strtoupper($ultimoCobro->estado_dinero) }}
+                                                                </button>
+                                                                <input type="hidden" name="cobro_id" value="{{ $ultimoCobro->id }}">
+                                                                <input type="hidden" name="estado_dinero" value="recaudado">
+                                                            </form>
+                                                        @endif
                                                     </td>
+                                                    
+                                                    
+                                                    
+
                                                     
                                                     
                                                     <td>{{ $ultimoCobro->estado_rc }}</td>

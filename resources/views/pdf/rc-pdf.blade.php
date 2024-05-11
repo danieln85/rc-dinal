@@ -122,6 +122,10 @@
                 <td>{{ $datos->nombre_cliente }}</td>
             </tr>
             <tr>
+                <th colspan="4">Email</th>
+                <td>{{ $datos->email_cliente }}</td>
+            </tr>
+            <tr>
                 <th colspan="4">No Factura</th>
                 <td>{{ $datos->num_factura }}</td>
             </tr>

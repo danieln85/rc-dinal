@@ -47,5 +47,7 @@ Route::middleware([
 
     Route::post('rc-pdf', [PdfController::class, 'rcPdf'])->name('rc-pdf');
 
+    Route::post('estado-cobro', [CashReceiptController::class, 'estadoCobro'])->name('estado-cobro');
+
 
 });
