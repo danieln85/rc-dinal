@@ -26,7 +26,6 @@ return new class extends Migration
             // $table->string('informacion')->nullable();
 
 
-
             $table->string('nombre_cliente')->nullable();
             $table->string('email_cliente')->nullable();
             $table->string('recibido_admin')->nullable();
