@@ -25,6 +25,7 @@ return new class extends Migration
             // $table->string('metodo_pago')->nullable();
             // $table->string('informacion')->nullable();
 
+            
             $table->string('nombre_cliente')->nullable();
             $table->string('email_cliente')->nullable();
             $table->string('recibido_admin')->nullable();
