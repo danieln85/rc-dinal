@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('cobros_fac', function (Blueprint $table) {
 
-            // $table->id();
+            // // $table->id();
             // $table->string('numero_rc')->nullable();
             // $table->date('date_cobro')->nullable();
             // $table->string('num_factura')->nullable();
@@ -67,7 +67,7 @@ return new class extends Migration
             // $table->dropColumn('devolucion');
             // $table->dropColumn('metodo_pago');
             // $table->dropColumn('informacion');
-            $table->dropTimestamps();
+            // $table->dropTimestamps();
         });
     }
 };
