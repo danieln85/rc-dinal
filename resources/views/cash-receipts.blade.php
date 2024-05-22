@@ -167,156 +167,137 @@
                         <div class="col-xl-12">
                             <div class="card">
                                 @if (session('error'))
-                                <div class="alert alert-danger">
-                                    {{ session('error') }}
-                                </div>
+                                    <div class="alert alert-danger">
+                                        {{ session('error') }}
+                                    </div>
                                 @endif
                                 @if (session('success'))
                                     <div class="alert alert-success">
                                         {{ session('success') }}
                                     </div>
-                                 @endif
+                                @endif
                                 <div class="card-body">
                                     <div class="table-responsive table-card">
                                         <table class="table table-hover table-nowrap align-middle mb-0">
                                             <thead>
                                                 <tr class="text-muted text-uppercase">
-                                                    {{-- <th style="width: 50px;">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="checkAll" value="option">
-                                                        </div>
-                                                    </th> --}}
                                                     <th scope="col">FECHA</th>
                                                     <th scope="col"># RC</th>
                                                     <th scope="col" style="width: 20%;">CLIENTE</th>
-                                                    {{-- <th scope="col" style="width: 20%;">CORREO</th> --}}
                                                     <th scope="col">FACTURA</th>
                                                     <th scope="col">VALOR</th>
-                                                    {{-- <th scope="col">ABONO</th> --}}
                                                     <th scope="col">COBRÓ</th>
                                                     <th scope="col">DINERO</th>
                                                     <th scope="col">ESTADO</th>
                                                     <th scope="col" style="width: 12%;">Action</th>
                                                 </tr>
                                             </thead>
-        
+                    
                                             <tbody>
-
                                                 @foreach ($ultimosCobros as $ultimoCobro)
-                                                <tr>
-                                                    {{-- <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="check1" value="option">
-                                                        </div>
-                                                    </td> --}}
-                                                    <td>{{ $ultimoCobro->date_cobro }}</td>
-                                                    <td><p class="fw-medium mb-0">{{ $ultimoCobro->numero_rc }}</p></td>
-                                                    <td>
-                                                        <a href="#javascript: void(0);" class="text-body align-middle fw-medium">{{ Illuminate\Support\Str::limit($ultimoCobro->nombre_cliente, 25) }}</a>
-                                                    </td>
-                                                    {{-- <td>{{ Illuminate\Support\Str::limit($ultimoCobro->email_cliente, 15) }}</td> --}}
-
-                                                    <td>{{ $ultimoCobro->num_factura }}</td>
-                                                    
-                                                    <td>{{ $ultimoCobro->cobro_abono }}</td>
-                                                    {{-- <td class="text-center">{{ $ultimoCobro->abono }}</td> --}}
-                                                    <td>{{ $ultimoCobro->cobrado_por }}</td>
-
-                                                    
-                                                    <td>
-                                                        @if (auth()->check() && auth()->user()->role == 'usuario')
-                                                            <span class="badge 
-                                                                @if($ultimoCobro->estado_dinero == 'recibido') bg-success text-white
-                                                                @elseif($ultimoCobro->estado_dinero == 'pendiente') bg-danger text-white
-                                                                @elseif($ultimoCobro->estado_dinero == 'recaudado') bg-warning text-white
+                                                    <tr id="cobro-{{ $ultimoCobro->id }}">
+                                                        <td>{{ $ultimoCobro->date_cobro }}</td>
+                                                        <td><p class="fw-medium mb-0">{{ $ultimoCobro->numero_rc }}</p></td>
+                                                        <td>
+                                                            <a href="#javascript: void(0);" class="text-body align-middle fw-medium">{{ Illuminate\Support\Str::limit($ultimoCobro->nombre_cliente, 25) }}</a>
+                                                        </td>
+                                                        <td>{{ $ultimoCobro->num_factura }}</td>
+                                                        <td>{{ $ultimoCobro->cobro_abono }}</td>
+                                                        <td>{{ $ultimoCobro->cobrado_por }}</td>
+                                                        <td>
+                                                            @if (auth()->check() && auth()->user()->role == 'usuario')
+                                                                <span class="badge 
+                                                                    @if($ultimoCobro->estado_dinero == 'recibido') bg-success text-white
+                                                                    @elseif($ultimoCobro->estado_dinero == 'pendiente') bg-danger text-white
+                                                                    @elseif($ultimoCobro->estado_dinero == 'recaudado') bg-warning text-white
+                                                                    @endif
+                                                                    p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
+                                                            @elseif (auth()->check() && auth()->user()->role == 'supervisor')
+                                                                @if($ultimoCobro->estado_dinero == 'recibido')
+                                                                    <span class="badge bg-success text-white p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
+                                                                @elseif($ultimoCobro->estado_dinero == 'pendiente')
+                                                                    <form action="{{ route('estado-cobro') }}" method="POST" onsubmit="saveScrollPosition()">
+                                                                        @csrf
+                                                                        <button type="submit" class="btn btn-danger btn-sm">
+                                                                            {{ strtoupper($ultimoCobro->estado_dinero) }}
+                                                                        </button>
+                                                                        <input type="hidden" name="cobro_id" value="{{ $ultimoCobro->id }}">
+                                                                        <input type="hidden" name="estado_dinero" value="recibido">
+                                                                    </form>
+                                                                @else
+                                                                    <span class="badge bg-warning text-white p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
                                                                 @endif
-                                                                p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
-                                                        @elseif (auth()->check() && auth()->user()->role == 'supervisor')
-                                                            @if($ultimoCobro->estado_dinero == 'recibido')
-                                                                <span class="badge bg-success text-white p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
-                                                            @elseif($ultimoCobro->estado_dinero == 'pendiente')
-                                                                <form action="{{ route('estado-cobro') }}" method="POST">
+                                                            @elseif (auth()->check() && auth()->user()->role == 'admin')
+                                                                <form action="{{ route('estado-cobro') }}" method="POST" onsubmit="saveScrollPosition()">
                                                                     @csrf
-                                                                    <button type="submit" class="btn btn-danger btn-sm"> <!-- Ajuste del tamaño aquí -->
+                                                                    <button type="submit" class="btn 
+                                                                        @if($ultimoCobro->estado_dinero == 'recibido') btn-success
+                                                                        @elseif($ultimoCobro->estado_dinero == 'pendiente') btn-danger
+                                                                        @elseif($ultimoCobro->estado_dinero == 'recaudado') btn-warning
+                                                                        @endif">
                                                                         {{ strtoupper($ultimoCobro->estado_dinero) }}
                                                                     </button>
                                                                     <input type="hidden" name="cobro_id" value="{{ $ultimoCobro->id }}">
-                                                                    <input type="hidden" name="estado_dinero" value="recibido">
+                                                                    <input type="hidden" name="estado_dinero" value="recaudado">
                                                                 </form>
-                                                            @else
-                                                                <span class="badge bg-warning text-white p-2">{{ strtoupper($ultimoCobro->estado_dinero) }}</span>
                                                             @endif
-                                                        @elseif (auth()->check() && auth()->user()->role == 'admin')
-                                                            <form action="{{ route('estado-cobro') }}" method="POST">
-                                                                @csrf
-                                                                <button type="submit" class="btn 
-                                                                    @if($ultimoCobro->estado_dinero == 'recibido') btn-success
-                                                                    @elseif($ultimoCobro->estado_dinero == 'pendiente') btn-danger
-                                                                    @elseif($ultimoCobro->estado_dinero == 'recaudado') btn-warning
-                                                                    @endif">
-                                                                    {{ strtoupper($ultimoCobro->estado_dinero) }}
+                                                        </td>
+                                                        <td>{{ $ultimoCobro->estado_rc }}</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <i class="las la-ellipsis-h align-middle fs-18"></i>
                                                                 </button>
-                                                                <input type="hidden" name="cobro_id" value="{{ $ultimoCobro->id }}">
-                                                                <input type="hidden" name="estado_dinero" value="recaudado">
-                                                            </form>
-                                                        @endif
-                                                    </td>
-                                                    
-                                                    
-                                                    
-
-                                                    
-                                                    
-                                                    <td>{{ $ultimoCobro->estado_rc }}</td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="las la-ellipsis-h align-middle fs-18"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li>
-                                                                    <form method="GET" action="{{ route('cash-receipt.show', $ultimoCobro->id) }}">
-                                                                        @csrf
-                                                                        <button type="submit" class="btn btn-link text-decoration-none" style="cursor: pointer;">
-                                                                            <i class="las la-eye fs-18 align-middle me-2 text-muted"></i> Ver
-                                                                        </button>
-                                                                    </form>
-                                                                </li>
-                                                                <li>
-                                                                    <form method="POST" action="{{ route('rc-pdf') }}">
-                                                                        @csrf
-                                                                        <input type="hidden" name="id_recibo" value="{{ $ultimoCobro->id }}">
-                                                                        <button class="btn btn-link text-decoration-none" style="cursor: pointer;" type="submit">
-                                                                            <i class="ri-download-2-line align-bottom me-1"></i> Descargar
-                                                                        </button>
-                                                                    </form>
-                                                                </li>
-                                                                {{-- <li>
-                                                                    <button class="dropdown-item" href="javascript:void(0);"><i class="las la-pen fs-18 align-middle me-2 text-muted"></i>
-                                                                        Edit</button>
-                                                                </li> --}}
-                                                                {{-- 
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item remove-item-btn" href="#">
-                                                                        <i class="las la-trash-alt fs-18 align-middle me-2 text-muted"></i>
-                                                                        Delete
-                                                                    </a>
-                                                                </li> --}}
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                                    <li>
+                                                                        <form method="GET" action="{{ route('cash-receipt.show', $ultimoCobro->id) }}">
+                                                                            @csrf
+                                                                            <button type="submit" class="btn btn-link text-decoration-none" style="cursor: pointer;">
+                                                                                <i class="las la-eye fs-18 align-middle me-2 text-muted"></i> Ver
+                                                                            </button>
+                                                                        </form>
+                                                                    </li>
+                                                                    <li>
+                                                                        <form method="POST" action="{{ route('rc-pdf') }}">
+                                                                            @csrf
+                                                                            <input type="hidden" name="id_recibo" value="{{ $ultimoCobro->id }}">
+                                                                            <button class="btn btn-link text-decoration-none" style="cursor: pointer;" type="submit">
+                                                                                <i class="ri-download-2-line align-bottom me-1"></i> Descargar
+                                                                            </button>
+                                                                        </form>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
                                                 @endforeach
-
-                                                
-                                            </tbody><!-- end tbody -->
-                                        </table><!-- end table -->
-                                    </div><!-- end table responsive -->
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
+                    <script>
+                        function saveScrollPosition() {
+                            // Guardar la posición de desplazamiento en localStorage
+                            localStorage.setItem('scrollPosition', window.scrollY);
+                        }
+                    
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Obtener la posición de desplazamiento desde localStorage
+                            var scrollPosition = localStorage.getItem('scrollPosition');
+                            
+                            // Si hay una posición de desplazamiento guardada, desplazarse a esa posición
+                            if (scrollPosition) {
+                                window.scrollTo(0, parseInt(scrollPosition));
+                                // Eliminar la posición de desplazamiento guardada
+                                localStorage.removeItem('scrollPosition');
+                            }
+                        });
+                    </script>
+                    
 
                     <div class="row align-items-center mb-4 gy-3">
 
